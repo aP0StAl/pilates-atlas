@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#102d34">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Pilates Atlas">
+<meta name="description" content="Автономная карта прогрессии Mat Pilates: 41 упражнение, чек-листы, свободная практика и разблокировка навыков.">
+<title>Pilates Atlas — версия 4</title>
+<style>
+:root{--ink:#17343a;--deep:#102d34;--sub:#607277;--paper:#f6f6f2;--card:#fff;--edge:#e5e9e5;--mint:#1d7766;--mintsoft:#e4f3ed;--gold:#e8c88f;--goldsoft:#faf0de;--blue:#e9eef8;--muted:#eff1f0;--red:#b75b4c;--shadow:0 8px 30px rgba(27,49,49,.055);--radius:21px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--paper);color:var(--ink);font-size:15px;line-height:1.47}button,input,textarea,select{font:inherit}button{cursor:pointer;-webkit-tap-highlight-color:transparent}button:disabled{opacity:.48;cursor:not-allowed}a{color:var(--mint)}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #9ac8b7;outline-offset:2px}p{margin:.35em 0 1em}h1,h2,h3{line-height:1.17;letter-spacing:-.03em;margin:0}h1{font-size:clamp(27px,4.5vw,40px);font-weight:780}h2{font-size:23px;font-weight:760}h3{font-size:17px;font-weight:730}.kicker{letter-spacing:.14em;text-transform:uppercase;font-size:10px;font-weight:840;color:var(--mint)}.muted{color:var(--sub)}.small{font-size:12px}.tiny{font-size:11px}.hide{display:none!important}svg{flex-shrink:0}.app{min-height:100dvh}.shell{max-width:1100px;margin:0 auto;padding:0 20px}.top{padding-top:env(safe-area-inset-top);background:var(--deep);color:#fff;position:relative;overflow:hidden}.top:after{content:"";position:absolute;width:360px;height:360px;right:-125px;top:-230px;border-radius:50%;border:60px solid rgba(203,238,223,.055);pointer-events:none}.topinner{display:flex;align-items:center;justify-content:space-between;min-height:82px;gap:16px}.logo{display:flex;align-items:center;gap:11px}.mark{display:grid;place-items:center;width:37px;height:37px;border:1px solid #6d9f91;border-radius:13px;color:#d2f5d5;font-family:Georgia,serif;font-size:26px;font-style:italic}.logo strong{display:block;font-size:16px;letter-spacing:.09em;font-weight:830}.logo span{font-size:11px;color:#a5bdba;letter-spacing:.05em}.headmeta{display:flex;align-items:center;gap:11px;color:#d4e5de;font-size:12px}.headpill{border:1px solid #436068;border-radius:100px;padding:8px 11px;white-space:nowrap}.headpill b{color:#f2d99e;font-size:16px}.headerbar{height:3px;background:rgba(255,255,255,.12)}.headerbar i{display:block;height:100%;background:#bfe5ae;transition:width .3s}
+main{padding-top:30px;padding-bottom:125px}.page{display:none;animation:rise .2s ease-out}.page.active{display:block}@keyframes rise{from{opacity:.3;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}.page-head{display:flex;gap:16px;justify-content:space-between;align-items:flex-end;margin-bottom:22px}.page-head p{margin:9px 0 0;color:var(--sub);max-width:620px;font-size:14px}.subnav{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;padding:10px 14px;background:#fff;color:var(--ink);border:1px solid var(--edge);border-radius:13px;font-size:13px;font-weight:690;transition:background .15s,transform .12s}.btn:active{transform:scale(.98)}.btn.primary{background:var(--mint);border-color:var(--mint);color:white}.btn.dark{background:var(--deep);color:#fff;border-color:var(--deep)}.btn.ghost{background:transparent}.btn.danger{color:var(--red)}.btn.icon{min-width:42px;padding:8px}.btn.wide{width:100%}.pill{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:740;background:var(--muted);color:#65737a;white-space:nowrap}.pill.open{background:#ddf1e6;color:#14634e}.pill.done{background:#d7eee4;color:#0f6250}.pill.lock{background:#ecedee;color:#747d80}.pill.gold{background:var(--goldsoft);color:#856226}
+.hero{display:grid;grid-template-columns:1.3fr .8fr;gap:18px;margin:4px 0 23px}.hero-primary{background:linear-gradient(128deg,#153f45,#1d5e56);border-radius:var(--radius);padding:28px;color:#fff;position:relative;overflow:hidden;min-height:202px}.hero-primary:after{content:"";position:absolute;right:-60px;top:-105px;width:300px;height:300px;border-radius:50%;border:46px solid rgba(237,248,227,.075)}.hero-primary .kicker{color:#bbdac0}.hero-primary h1{margin:13px 0 10px}.hero-primary p{font-size:14px;color:#d5e9e4;max-width:410px;margin-bottom:20px}.hero-metric{border-radius:var(--radius);background:#fff;border:1px solid var(--edge);padding:23px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow)}.metric-row{display:flex;justify-content:space-between;align-items:flex-start}.metric-n{font-size:52px;letter-spacing:-.07em;line-height:1.0;font-weight:780}.meter{height:9px;border-radius:99px;background:#e9efea;overflow:hidden}.meter i{display:block;height:100%;background:#4f9b7f;border-radius:99px;transition:width .3s}.section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:28px 0 15px}.section-title h2{font-size:20px}.section-title p{font-size:12px;color:var(--sub);margin:5px 0 0}.switch{display:inline-flex;background:#e9eeea;border:1px solid #e4e9e4;border-radius:14px;padding:4px;gap:3px}.switch button{border:0;border-radius:10px;background:transparent;padding:9px 20px;font-size:13px;font-weight:770;color:#68797a;min-width:70px}.switch button.active{color:var(--deep);background:#fff;box-shadow:0 2px 8px #1c41301c}.workout-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.workout{display:flex;gap:12px;align-items:center;padding:15px;border:1px solid var(--edge);background:#fff;border-radius:17px;box-shadow:0 3px 13px #213b3811;min-height:94px}.workout .work-text{flex:1;min-width:0}.workout .work-text h3{font-size:14px;letter-spacing:-.01em;line-height:1.32}.workout .work-text p{font-size:12px;color:var(--sub);margin:5px 0 0}.workout .work-text small{font-size:10px;color:#8b9694;font-weight:800;letter-spacing:.1em}.check-toggle{width:43px;height:43px;border-radius:13px;border:1px solid #c6d7cf;background:#fff;display:grid;place-items:center;color:#a5c6b6;flex-shrink:0}.check-toggle.checked{background:var(--mint);border-color:var(--mint);color:white}.work-open{border:0;background:transparent;text-align:left;padding:0;flex:1;min-width:0;color:inherit}.promptbox{border:1px solid #e6ebdf;background:#f1f5ed;border-radius:17px;padding:17px 19px;display:flex;align-items:center;gap:13px;margin-top:15px}.promptbox .icobox{background:#fff;width:41px;height:41px;display:grid;place-items:center;border-radius:13px;color:#478475;flex-shrink:0}.promptbox p{font-size:12px;color:var(--sub);margin:3px 0 0}.promptbox strong{font-size:14px}.promptbox button{margin-left:auto;flex-shrink:0}.cardbox{border:1px solid var(--edge);border-radius:18px;background:#fff;padding:17px;box-shadow:var(--shadow)}
+.filterrow{display:flex;gap:7px;overflow:auto;scrollbar-width:none;padding-bottom:7px}.filterrow::-webkit-scrollbar{display:none}.filter{border:1px solid #dce5e0;border-radius:999px;background:#fff;padding:8px 14px;white-space:nowrap;font-size:12px;font-weight:730;color:var(--sub)}.filter.active{background:var(--deep);color:#fff;border-color:var(--deep)}.catalog-top{display:grid;grid-template-columns:1fr auto;gap:10px;margin-bottom:12px}.search{width:100%;height:46px;padding:0 15px;border:1px solid var(--edge);background:#fff;border-radius:14px;color:var(--ink);font-size:16px}.results{font-size:12px;color:var(--sub);margin:14px 0}.catalog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.exercise-card{display:flex;flex-direction:column;align-items:stretch;text-align:left;gap:9px;min-height:167px;border:1px solid var(--edge);background:#fff;border-radius:18px;padding:16px;color:inherit;transition:transform .12s,border-color .12s;box-shadow:0 4px 12px #102d3409}.exercise-card:active{transform:scale(.987)}.exercise-card.active-skill{border-color:#bedbcf}.exercise-card.locked-skill{background:#fafbfa}.exercise-card .ex-top{display:flex;justify-content:space-between;align-items:center;gap:6px}.ex-id{font-size:11px;font-weight:860;letter-spacing:.11em;color:var(--mint)}.exercise-card.locked-skill .ex-id{color:#83918d}.exercise-card h3{font-size:15px;line-height:1.3}.exercise-card .ex-bottom{font-size:11px;color:var(--sub);margin-top:auto}.exercise-card small{font-size:11px;color:var(--sub)}
+.map-toolbar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:9px;margin:0 0 11px}.map-cats{display:flex;gap:7px;overflow:auto;flex:1;scrollbar-width:none}.map-cats::-webkit-scrollbar{display:none}.map-cats button{border-radius:999px;border:1px solid #d8e5de;background:#fff;color:#526967;white-space:nowrap;font-size:12px;font-weight:720;padding:9px 13px}.map-cats button.current{background:var(--deep);border-color:var(--deep);color:#fff}.map-tools{display:flex;gap:6px}.map-frame{height:min(64dvh,680px);min-height:430px;border:1px solid #dbe5e0;background:#eff3ed;border-radius:20px;overflow:hidden;position:relative;touch-action:none;box-shadow:var(--shadow)}.map-frame svg{width:100%;height:100%;display:block;touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab}.map-frame svg.grabbing{cursor:grabbing}.map-hint{position:absolute;left:12px;bottom:13px;background:#fffef4eF;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid #e9e2cd;border-radius:10px;padding:8px 10px;font-size:11px;color:#677575;pointer-events:none;box-shadow:0 2px 10px #1529240c}.map-right{position:absolute;right:13px;top:13px;display:flex;flex-direction:column;gap:6px}.map-right button{width:42px;height:42px;font-size:21px;border:1px solid #d4e1d7;background:#fffc;border-radius:12px;color:var(--deep);box-shadow:0 2px 10px #17343a12;backdrop-filter:blur(8px)}.map-right button:active{background:#dcefe5}.map-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:11px;flex-wrap:wrap}.legend{display:flex;align-items:center;gap:13px;flex-wrap:wrap;font-size:11px;color:#6a7b76}.legend span{display:inline-flex;align-items:center;gap:5px}.dot{width:9px;height:9px;border-radius:100px;display:inline-block}.dot.g{background:#2b876f}.dot.a{background:#d9bd77}.dot.l{background:#bdc5c4}.soon-list{margin-top:15px;display:flex;gap:8px;overflow-x:auto;padding-bottom:6px}.soon{min-width:166px;max-width:200px;border:1px solid #e2e6e1;background:#fff;border-radius:13px;padding:12px;text-align:left;color:var(--ink)}.soon b{display:block;font-size:12px}.soon span{display:block;font-size:10px;color:var(--sub);margin-top:3px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{padding:21px;background:#fff;border:1px solid var(--edge);border-radius:18px}.stat strong{font-size:32px;line-height:1.1;display:block;letter-spacing:-.05em}.stat span{color:var(--sub);font-size:12px}.progress-layout{display:grid;grid-template-columns:1.35fr 1fr;gap:14px;margin-top:14px}.cat-progress{display:flex;align-items:center;gap:11px;margin:13px 0}.cat-progress .catname{flex:0 0 130px;font-size:12px;color:var(--sub)}.cat-progress .meter{flex:1;height:6px}.cat-progress .fraction{font-size:11px;color:var(--sub);width:36px;text-align:right}.history{display:flex;gap:10px;border-bottom:1px solid var(--edge);padding:11px 0;align-items:flex-start}.history:last-child{border:0}.history strong{display:block;font-size:13px}.history span{font-size:11px;color:var(--sub)}.history .date{margin-left:auto;white-space:nowrap;color:#788782;font-size:11px}.settings-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.info-line{background:#f3f6f2;border:1px solid #e0e9e0;padding:13px;border-radius:12px;font-size:12px;color:#63746f;margin:12px 0}.alert-line{display:none;background:#fff0ed;border:1px solid #f2cbc6;color:#934d43;border-radius:10px;padding:11px;margin:12px 0;font-size:13px}
+.bottomnav{position:fixed;bottom:0;left:0;right:0;z-index:25;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid #dde7df;padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -9px 25px #1d42350b}.bottominner{max-width:740px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);height:65px}.nav-item{display:flex;flex-direction:column;gap:3px;align-items:center;justify-content:center;background:transparent;border:0;color:#74817e;font-size:10px;font-weight:720;min-height:54px}.nav-item svg{width:22px;height:22px}.nav-item.active{color:var(--mint)}.nav-item.active .nav-bg{background:#e2f3e8}.nav-bg{display:grid;place-items:center;width:48px;height:30px;border-radius:13px}
+.overlay{position:fixed;inset:0;z-index:50;background:#132c3080;display:none;align-items:center;justify-content:center;padding:16px;overscroll-behavior:contain}.overlay.open{display:flex}.sheet{width:min(100%,750px);max-height:min(93dvh,930px);display:flex;flex-direction:column;background:#fdfefc;border-radius:25px;box-shadow:0 20px 90px #0c20204a;overflow:hidden}.sheet-top{display:flex;gap:12px;justify-content:space-between;align-items:center;padding:18px 21px 14px;border-bottom:1px solid #e9ebe8;background:#fff}.sheet-title{flex:1;min-width:0}.sheet-title h2{font-size:22px;line-height:1.16;margin:5px 0}.close-x{border:0;background:#edf2ef;border-radius:13px;width:40px;height:40px;font-size:23px;display:grid;place-items:center;flex-shrink:0;color:#405650}.sheet-content{flex:1;overflow-y:auto;padding:19px 22px 29px;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}.sheet-tabs{display:flex;gap:6px;margin:0 0 18px;padding:4px;background:#edf1ed;border-radius:13px}.sheet-tabs button{flex:1;border:0;border-radius:10px;background:transparent;color:#697b73;padding:9px;font-size:12px;font-weight:760}.sheet-tabs button.active{background:#fff;color:var(--ink);box-shadow:0 1px 7px #102d3414}.sheet-content h3{font-size:15px;margin:19px 0 8px}.steps{margin:7px 0 16px;padding-left:22px}.steps li{padding-left:4px;margin:0 0 9px;font-size:14px}.textlist{margin:6px 0 15px;padding-left:18px;color:#536866;font-size:13px}.textlist li{margin:0 0 7px}.goal{border-left:3px solid var(--mint);padding:11px 14px;background:#ecf6ef;border-radius:0 12px 12px 0;margin:13px 0;font-size:14px}.goal b{display:block;color:#236a53;font-size:12px;margin-bottom:3px}.caution{border-left:3px solid #d9b87c;background:#fff7e8;color:#786144;border-radius:0 10px 10px 0;padding:11px 13px;margin:14px 0;font-size:12px}.detail-prereqs{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:12px 0}.detail-prereqs button{border:1px solid #dbe8db;background:#fff;border-radius:10px;padding:7px 10px;font-size:11px;color:var(--ink)}.check-section{border:1px solid #e3e8e2;border-radius:15px;padding:15px;margin:13px 0;background:#fff}.check-section h3{margin:0 0 12px;font-size:14px}.choice{display:flex;align-items:flex-start;gap:12px;padding:11px 3px;border-bottom:1px solid #f0f1f0;font-size:13px;line-height:1.42;cursor:pointer}.choice:last-child{border-bottom:none}.choice input{width:20px;height:20px;margin:0;accent-color:var(--mint);flex-shrink:0}.assessment-bottom{position:sticky;bottom:-29px;padding:15px 0 5px;background:linear-gradient(transparent,#fdfefc 16%);z-index:1}.assessment-status{font-size:12px;color:var(--sub);margin:9px 0;text-align:center}.lock-info{padding:15px;background:#f2f3f1;border:1px solid #e5e7e5;border-radius:13px;color:#6a7975;font-size:13px}.toast{position:fixed;z-index:100;left:50%;bottom:calc(82px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(15px);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;max-width:calc(100vw - 30px);background:#15373a;color:#fff;border-radius:12px;padding:12px 18px;font-size:13px;font-weight:650;text-align:center;box-shadow:0 9px 30px #1428244a}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:800px){.shell{padding:0 15px}.topinner{min-height:73px}.hero{grid-template-columns:1.2fr .8fr}.hero-primary{padding:22px;min-height:195px}.hero-metric{padding:18px}.catalog-grid{grid-template-columns:repeat(2,1fr)}.progress-layout{grid-template-columns:1fr}}
+@media(max-width:540px){.shell{padding:0 16px}.topinner{min-height:70px}.logo strong{font-size:14px}.headpill{padding:7px 9px;font-size:10px}.headpill b{font-size:14px}main{padding-top:20px;padding-bottom:calc(95px + env(safe-area-inset-bottom))}.page-head{margin-bottom:16px}.page-head p{font-size:13px}.page-head h1{font-size:27px}.hero{grid-template-columns:1fr;gap:9px;margin-bottom:19px}.hero-primary{min-height:170px;padding:22px}.hero-primary h1{font-size:27px}.hero-primary p{font-size:13px;max-width:265px;margin-bottom:12px}.hero-metric{padding:15px;display:block}.hero-metric .metric-row{align-items:center}.hero-metric .metric-n{font-size:33px}.hero-metric .meter{margin-top:13px}.section-title{margin:22px 0 11px}.section-title h2{font-size:18px}.workout-grid{grid-template-columns:1fr;gap:8px}.workout{min-height:78px;padding:11px 12px;border-radius:15px}.promptbox{align-items:flex-start;flex-wrap:wrap;padding:14px}.promptbox button{margin-left:54px}.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.exercise-card{padding:13px;min-height:161px}.exercise-card h3{font-size:14px}.catalog-top{grid-template-columns:1fr}.map-frame{height:59dvh;min-height:390px;border-radius:16px}.map-hint{max-width:calc(100% - 90px);font-size:10px;padding:7px}.map-footer{align-items:flex-start}.stats{gap:8px}.stat{padding:14px 11px}.stat strong{font-size:28px}.stat span{font-size:10px}.sheet{width:100%;border-radius:24px 24px 0 0;max-height:95dvh;margin-top:auto}.overlay{padding:env(safe-area-inset-top) 0 0;align-items:flex-end}.sheet-top{padding:14px 16px 11px}.sheet-title h2{font-size:20px}.sheet-content{padding:15px 17px calc(20px + env(safe-area-inset-bottom))}.cat-progress .catname{flex-basis:110px}.bottominner{height:60px}.nav-item{font-size:10px}.map-cats{max-width:100%}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* V2 · precise, calm, touch-first design */
+:root{--ink:#233b38;--deep:#214a42;--sub:#6e8079;--paper:#f8f9f6;--card:#fff;--edge:#e4eae4;--mint:#2a7866;--mintsoft:#e5f2eb;--shadow:0 4px 24px rgba(29,59,48,.035)}
+body{background:var(--paper);color:var(--ink)}
+.top{background:#fff;color:var(--ink);border-bottom:1px solid var(--edge)}.top:after{display:none}.mark{background:#e7f3eb;border:0;color:#3a7c66}.logo strong{color:#25453e;letter-spacing:.07em}.logo span{color:#81948c}.headmeta{color:#4f625a}.headpill{border:1px solid var(--edge);color:#64756d;background:#f7faf7}.headpill b{color:#2b7963}.headerbar{background:#edf3ec}.headerbar i{background:#5b9e81}main{padding-top:27px}.page-head{align-items:flex-start}.page-head .kicker{color:#548b75}.page-head p{line-height:1.55}.kicker{color:#477e69}.bottomnav{background:rgba(255,255,255,.97)}.nav-item.active .nav-bg{background:#dff0e7}.nav-item.active{color:#2a735f}.btn.primary{background:#2a745f;border-color:#2a745f}
+.dash-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 27px}.dash-number{background:#fff;border:1px solid var(--edge);border-radius:18px;padding:16px 17px;display:flex;align-items:baseline;gap:10px}.dash-number b{font-size:33px;line-height:1;font-weight:760;letter-spacing:-.055em}.dash-number span{font-size:12px;color:#6d8076}.dash-progress{grid-column:1/-1;display:flex;align-items:center;gap:15px;padding:2px 3px}.dash-progress .meter{flex:1;height:6px}.dash-progress span{color:#84968b;font-size:12px;text-align:right}.practice-filters{display:flex;gap:7px;overflow:auto;padding:3px 0 10px;scrollbar-width:none}.practice-filters::-webkit-scrollbar{display:none}.practice-filters button{white-space:nowrap;border-radius:12px;padding:10px 14px;background:#fff;border:1px solid #e3ebe4;font-size:12px;font-weight:730;color:#688075}.practice-filters button.active{color:#fff;background:#2e6758;border-color:#2e6758}.practice-filters small{opacity:.8}.practice-count{color:#8a9990;font-size:12px;margin:5px 0 13px}.practice-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.practice-card{background:#fff;border:1px solid #e0e8e1;border-radius:19px;box-shadow:0 3px 15px #243e3108;display:flex;flex-direction:column;padding:17px 18px 13px;min-width:0;gap:13px}.practice-card.was-done{border-color:#bdd8c8}.pc-main{display:flex;gap:8px;align-items:flex-start}.pc-open{border:0;background:transparent;color:inherit;padding:0;text-align:left;flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:5px}.pc-overline{font-size:11px;color:#7a8a82;font-weight:750}.pc-open strong{font-size:16px;line-height:1.25;letter-spacing:-.012em}.pc-dose{font-size:12px;color:#8b9990;line-height:1.44}.pc-pin{border:0;background:#f5f8f4;border-radius:10px;color:#b0bdb4;font-size:22px;width:37px;height:37px;flex-shrink:0;display:grid;place-items:center}.pc-pin.selected{color:#9b7930;background:#fbf2de}.pc-actions{display:flex;align-items:center;gap:7px;padding-top:11px;border-top:1px solid #eff2ee;flex-wrap:wrap}.pc-stage{font-size:11px;color:#799185;flex:1;white-space:nowrap}.pc-stage.is-mastered{color:#288067;font-weight:750}.pc-check,.pc-assess{border:1px solid #dce8df;background:#f8faf8;border-radius:10px;min-height:35px;padding:7px 10px;color:#3d705a;font-size:11px;font-weight:760;white-space:nowrap}.pc-check.checked{background:#dcf0e5;border-color:#c6e5d2}.pc-assess{background:#fff;color:#415f54}.pc-assess span{font-size:13px}.practice-explainer{display:flex;align-items:flex-start;gap:14px;background:#edf3ec;border:1px solid #e1eae0;border-radius:17px;padding:18px;margin-top:20px}.practice-explainer strong{font-size:14px}.practice-explainer p{font-size:12px;color:#657a6c;margin:4px 0 0}.explainer-icon{display:grid;place-items:center;width:34px;height:34px;border-radius:12px;background:#fff;color:#4b9473;font-weight:800;flex-shrink:0}.practice-empty{grid-column:1/-1;text-align:center;background:#fff;border:1px dashed #cfded2;border-radius:18px;padding:30px 18px}.practice-empty>span{font-size:30px;color:#75a790}.practice-empty h3{margin:10px 0 6px}.practice-empty p{color:var(--sub);font-size:13px;max-width:420px;margin:0 auto 14px}
+.map-modes{display:grid;grid-template-columns:1fr 1fr;gap:5px;background:#edf1eb;border:1px solid #e4eae3;padding:5px;border-radius:15px;margin:20px 0 18px}.map-modes button{border:0;background:transparent;border-radius:11px;color:#7f9186;font-size:13px;font-weight:750;min-height:40px}.map-modes button.active{background:#fff;box-shadow:0 1px 8px #102d3414;color:#255d4c}.branch-overview{margin-top:4px}.branch-intro{display:flex;align-items:center;gap:13px;padding:17px 18px;background:#e7f1e9;border-radius:18px;border:1px solid #d9e8dc;margin-bottom:14px}.branch-intro-icon{background:#fff;color:#4f8970;display:grid;place-items:center;border-radius:13px;width:43px;height:43px;font-size:24px;flex-shrink:0}.branch-intro>div{flex:1;min-width:0}.branch-intro strong{font-size:14px}.branch-intro p{font-size:12px;color:#657a6e;margin:2px 0 0}.branch-intro button{min-height:39px}.branch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.branch-tile{--branch-accent:#e4efe7;background:#fff;border:1px solid #e1e8e0;min-height:187px;border-radius:19px;padding:19px;display:flex;flex-direction:column;align-items:stretch;text-align:left;gap:7px;color:var(--ink);box-shadow:0 3px 13px #10332406;transition:transform .12s}.branch-tile:active{transform:scale(.987)}.branch-tile-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px}.branch-glyph,.selected-glyph{display:grid;place-items:center;border-radius:14px;background:var(--branch-accent);color:#315f50;width:43px;height:43px;font-size:25px;font-family:Georgia,serif}.branch-index{font-size:11px;letter-spacing:.1em;color:#a1aea4;font-weight:750}.branch-tile>strong{font-size:16px;line-height:1.3}.branch-sub{font-size:12px;color:#8c9b8f;flex:1}.branch-bottom{margin-top:11px;display:flex;align-items:center;gap:10px;justify-content:space-between}.branch-bottom>span:last-child{font-size:12px;color:#5d7565;font-weight:750;white-space:nowrap}.branch-bottom>span:last-child span{font-size:17px;margin-left:5px;color:#83a496}.branch-track{flex:1;height:5px;border-radius:99px;background:#e8eee9;overflow:hidden}.branch-track i{display:block;height:100%;background:#5a9e7d;border-radius:99px}
+.branch-nav{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 18px}.branch-back,.branch-full-link{border:0;background:transparent;color:#3b7561;padding:10px 2px;font-size:13px;font-weight:740}.branch-back span{font-size:20px;margin-right:7px;vertical-align:middle}.branch-full-link{color:#87978c}.selected-branch{display:flex;align-items:center;gap:15px;background:#fff;border:1px solid var(--edge);border-radius:21px;padding:20px;margin-bottom:23px}.selected-glyph{width:62px;height:62px;flex-shrink:0;font-size:36px}.selected-branch h2{font-size:23px;margin:5px 0}.selected-branch p{margin:0;font-size:12px;color:#84958a}.diagram-guide{display:flex;justify-content:space-between;gap:14px;color:#99a79c;font-size:11px;padding:0 3px 20px}.branch-flow{max-width:840px;margin:auto}.flow-level{position:relative}.flow-step{text-align:center;color:#8b9c91;font-size:11px;letter-spacing:.14em;font-weight:850;margin-bottom:10px}.flow-nodes{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;gap:12px}.flow-nodes.flow-split{grid-template-columns:repeat(2,minmax(0,1fr))}.flow-node{width:100%;max-width:495px;background:#fff;border:1px solid #e0e6df;border-radius:17px;box-shadow:0 3px 16px #13352a05;overflow:hidden;position:relative}.flow-node.open{border-color:#8ebaa4;box-shadow:0 0 0 1px #8ebaa422}.flow-node.mastered{border-color:#cbdab7;background:#fafcf7}.flow-node.locked{background:#f7f9f7}.flow-node-main{border:0;background:transparent;color:inherit;text-align:left;width:100%;padding:15px 17px 9px;display:flex;flex-direction:column;gap:7px}.flow-node-code{font-size:11px;color:#628071;font-weight:850;display:flex;justify-content:space-between;gap:8px;align-items:center}.flow-node-code span{color:#5c987a;font-size:10px;white-space:nowrap}.flow-node.locked .flow-node-code span{color:#a6b0a7}.flow-node-main strong{font-size:15px;line-height:1.28;letter-spacing:-.012em}.flow-node-main small{font-size:11px;color:#95a197;line-height:1.35}.flow-node.locked .flow-node-main strong{color:#8e9c91}.flow-req{display:flex;flex-wrap:wrap;gap:4px 5px;border-top:1px solid #eff2ee;padding:9px 13px 10px;min-height:27px}.flow-req button,.flow-req span{border:0;border-radius:7px;background:#f1f5ef;color:#7d8f83;font-size:10px;padding:4px 7px;line-height:1.35}.flow-req button.cross-req{background:#f4eee5;color:#9b805e}.flow-connector{height:42px;display:grid;place-items:center;color:#82a78d;font-size:23px;font-weight:300}.flow-connector:before{content:'';position:absolute;left:50%;transform:translateX(-50%);height:27px;width:1px;background:linear-gradient(#afcbb6,#d4e0d5)}.flow-connector span{position:relative;background:var(--paper);z-index:1;padding:1px 8px}.diagram-end{text-align:center;font-size:12px;color:#9eaaa0;padding:28px 10px 0}.map-context{display:flex;flex-direction:column;gap:5px;margin:5px 0 16px}.map-context strong{font-size:15px}.map-context span{font-size:12px;color:#8c9a91}.map-frame{height:min(72dvh,690px);min-height:470px;background:#f9fbf8;border-color:#e2e8e2;border-radius:18px}.map-hint{border-radius:9px;background:#ffffffec;font-size:11px;color:#6f8a77;left:12px;bottom:12px}.map-right button{border-radius:11px;background:#fff;color:#3e705a}.map-footer{margin:12px 0 18px}.map-extra-title{margin-top:23px}
+@media(max-width:800px){.branch-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.page-head{margin-bottom:14px}.page-head h1{font-size:29px}.dash-summary{gap:8px;margin:15px 0 24px}.dash-number{padding:13px 10px 14px;display:flex;flex-direction:column;gap:6px;border-radius:14px}.dash-number b{font-size:29px}.dash-number span{font-size:11px}.dash-progress{display:block}.dash-progress span{display:block;margin-top:9px;text-align:left}.practice-list{grid-template-columns:1fr;gap:10px}.practice-card{padding:15px 15px 12px;border-radius:16px;gap:13px}.pc-open strong{font-size:16px}.pc-actions{gap:6px}.pc-stage{font-size:10px}.pc-check,.pc-assess{padding:7px 8px}.branch-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.branch-tile{padding:14px;min-height:167px;border-radius:16px}.branch-tile>strong{font-size:14px}.branch-sub{font-size:11px}.branch-glyph{width:37px;height:37px;font-size:22px}.branch-bottom{gap:6px}.branch-bottom>span:last-child{font-size:11px}.branch-bottom>span:last-child span{margin-left:2px}.branch-intro{padding:13px 12px;gap:10px}.branch-intro strong{font-size:13px}.branch-intro p{font-size:11px}.branch-intro .btn{padding:7px 9px;font-size:11px}.selected-branch{padding:15px;gap:11px}.selected-glyph{width:48px;height:48px;font-size:30px}.selected-branch h2{font-size:21px}.diagram-guide{font-size:10px}.flow-nodes.flow-split{gap:8px}.flow-node-main{padding:12px 11px 8px}.flow-node-main strong{font-size:14px}.flow-node-code span{font-size:9px}.flow-node-main small{font-size:10px}.flow-req{padding:7px;gap:4px}.flow-req button{font-size:9px;padding:3px 5px}.map-frame{height:65dvh;min-height:430px}.map-toolbar{gap:9px}.map-tools .btn{padding:8px 9px;font-size:11px}.map-modes{margin:16px 0}.dash-progress .meter{height:6px}}
+@media(max-width:360px){.pc-actions{flex-wrap:wrap}.pc-stage{flex-basis:100%}.branch-grid{grid-template-columns:1fr}.branch-tile{min-height:145px}.flow-nodes.flow-split{grid-template-columns:1fr}}
+
+
+.branch-flow{position:relative}.branch-links-svg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:visible}.flow-level{position:relative;z-index:1}.flow-connector{height:57px;position:relative}.flow-connector:before{display:none}.flow-connector span{display:none}
+@media(max-width:540px){.practice-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;overflow:visible;padding-bottom:4px}.practice-filters button{white-space:normal;min-height:40px;text-align:center;padding:9px 7px}}
+.flow-node.locked .flow-node-main strong{color:#526c5f}.flow-node.locked .flow-node-code span{color:#7a8e82}.flow-node-main small{color:#748a7c}.flow-req button{color:#587263}.flow-req span{color:#718879}
+/* v3 — calm roadmap-inspired dependency explorer */
+#mapFullPane{--forest:#1f715d;--purple:#8372b7;}
+#mapFullPane .map-context{margin:4px 0 13px;gap:4px}
+#mapFullPane .map-context strong{font-size:18px;letter-spacing:-.03em;color:#1e3e33}
+#mapFullPane .map-context span{line-height:1.55;font-size:13px;color:#718279}
+#mapFullPane .map-cats button{background:#fff;border:1px solid #e3eae4;padding:10px 14px;color:#576b61}
+#mapFullPane .map-cats button.current{background:#275c4a;color:white;border-color:#275c4a}
+#mapFullPane .map-frame{height:min(70dvh,670px);min-height:480px;background:#fbfcfa;border:1px solid #dfe7df;border-radius:19px;box-shadow:0 13px 45px #1c372310}
+#mapFullPane .map-hint{background:#ffffffed;color:#71877c;box-shadow:none;border-color:#eef1ec;font-size:10px;left:10px;bottom:10px;padding:7px 9px}
+#mapFullPane .map-right{right:11px;top:11px}
+#mapFullPane .map-right button{width:42px;height:42px;border-radius:13px;background:#fff;border-color:#e4eae4;color:#3f6856}
+#mapFullPane .map-footer{font-size:12px;line-height:1.5;margin:13px 2px 19px}
+#mapFullPane .map-footer .small{max-width:380px;line-height:1.5}
+.map-selected{position:absolute;left:12px;top:12px;max-width:calc(100% - 88px);padding:10px 12px;border:1px solid #d9e9df;border-radius:13px;background:#ffffffef;box-shadow:0 5px 20px #253b3014;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#1f4635;z-index:1;display:flex;align-items:center;gap:9px;text-align:left}
+.map-selected .s-code{font-weight:850;color:#248269;font-size:13px}
+.map-selected .s-title{display:block;font-weight:760;font-size:12px;line-height:1.3;max-width:160px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.map-selected .s-more{font-size:15px;color:#719a85}
+.relation-panel{border:1px solid #e1eae2;border-radius:22px;background:#fff;box-shadow:0 8px 30px #25412f0b;padding:18px;margin:14px 0 20px}
+.relation-header{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-bottom:17px}
+.relation-header .eyebrow{display:block;font-size:10px;letter-spacing:.14em;font-weight:800;color:#6b9782;margin-bottom:6px}
+.relation-header h3{margin:0;font-size:21px;line-height:1.15;letter-spacing:-.04em;color:#1d3e30}
+.relation-header h3 span{font-size:12px;color:#7a9286;margin-left:5px;letter-spacing:0}
+.relation-open{background:#eaf5ee;border:1px solid #d4e7da;color:#22684c;border-radius:12px;padding:11px 12px;font-weight:800;font-size:12px;white-space:nowrap;flex-shrink:0}
+.relation-open span{margin-left:6px}
+.relation-flow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr) minmax(0,1fr);align-items:center;gap:16px}
+.relation-block{align-self:stretch;border:1px solid #eef1ed;border-radius:15px;padding:13px 12px;background:#fbfcfa}
+.relation-title{display:flex;align-items:center;gap:8px;color:#657e70;font-weight:770;font-size:12px;margin-bottom:9px}
+.relation-title em{font-style:normal;color:#17775c;background:#dff1e6;padding:2px 5px;border-radius:5px;font-size:10px;letter-spacing:.05em}
+.relation-icon{width:21px;height:21px;display:grid;place-items:center;border-radius:7px;background:#ecf3ee;color:#54806a;font-size:11px}
+.relation-tiles{display:flex;flex-direction:column;gap:8px}
+.relation-tile{background:#fff;border:1px solid #dfe9e0;border-radius:11px;padding:10px 11px;text-align:left;display:block;width:100%;color:#263e33;line-height:1.3;transition:background .18s}
+.relation-tile:active{background:#eaf5ef}
+.relation-tile .relation-code{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:#558674;font-weight:830;margin-bottom:6px;gap:6px}
+.relation-tile .relation-code span{color:#8ca097;font-size:10px;text-align:right;font-weight:700}
+.relation-tile b{font-size:12px;display:block;font-weight:760}
+.relation-tile.mastered{background:#fffaf0;border-color:#e7d8aa}
+.relation-tile.open{border-color:#9ac4ab}
+.relation-empty{font-size:12px;line-height:1.5;color:#96a69a;padding:8px 0}
+.relation-current{padding:17px 12px;background:#ecf6f0;border:2px solid #2c8a6b;border-radius:15px;box-shadow:0 5px 18px #32745613;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;min-width:0}
+.relation-current.locked{background:#f6f7f5;border-color:#cad7cd}
+.relation-current.mastered{background:#fff9ed;border-color:#c5a65b}
+.relation-current small{font-size:9px;font-weight:870;letter-spacing:.08em;color:#44886b}
+.relation-current.locked small{color:#829789}
+.relation-current strong{font-size:15px;line-height:1.25;font-weight:820;color:#173e2c}
+.relation-current span{font-size:11px;color:#608875}
+.relation-center{display:flex;align-items:center;gap:8px;min-width:0;flex-direction:row}
+.relation-center>span{font-size:22px;transform:rotate(-90deg);color:#8bad9a}
+.relation-center .relation-current{flex:1}
+.relation-foot{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:15px;font-size:10.5px;color:#87958a;flex-wrap:wrap}
+.relation-point{width:8px;height:8px;border-radius:50%;display:inline-block;background:#2d936c}
+.relation-point.next{background:#9684c6}
+@media(max-width:830px){.relation-flow{grid-template-columns:1fr;gap:0}.relation-center{flex-direction:column;gap:3px;padding:5px 0}.relation-center>span{transform:none;font-size:20px;line-height:1}.relation-block{padding:12px 13px}.relation-tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.relation-empty{grid-column:1/-1}.relation-header h3{font-size:20px}}
+@media(max-width:540px){#mapFullPane .map-frame{height:55dvh;min-height:390px;max-height:540px}#mapFullPane .map-toolbar{align-items:center}#mapFullPane .map-tools button{padding:9px;font-size:12px;white-space:nowrap}#mapFullPane .map-cats button{font-size:11px;padding:9px 10px}.relation-panel{padding:15px 12px;border-radius:18px}.relation-header h3{font-size:18px}.relation-header .eyebrow{font-size:9px}.relation-open{font-size:11px;padding:9px 10px}.relation-tile{padding:9px}.relation-tile b{font-size:11px}.relation-tile .relation-code{flex-direction:column;align-items:flex-start;gap:2px}.relation-center .relation-current{width:100%}.map-selected{padding:9px 10px;max-width:calc(100% - 84px)}.map-selected .s-title{max-width:135px}}
+
+
+/* V4 — Navigation is part of the viewport layout, never a covering overlay. */
+.migration-note{padding:15px 16px;border-radius:14px;background:#fff9e9;border:1px solid #ead6a9;color:#745f35;font-size:13px;line-height:1.6;margin-top:18px}
+.migration-note b{display:block;margin-bottom:4px}
+html,body{height:100%;overscroll-behavior:none}
+.app{height:100vh;height:100dvh;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+.top{flex:0 0 auto;position:relative;z-index:2}
+main.shell{width:100%;max-width:1100px;flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding-bottom:30px;scrollbar-gutter:stable;}
+.bottomnav{position:relative;left:auto;right:auto;bottom:auto;flex:0 0 auto;z-index:2;box-shadow:none;background:#fff;padding-bottom:env(safe-area-inset-bottom)}
+.bottominner{height:65px}
+#appMain section{scroll-margin-top:15px}
+@media(max-width:540px){main.shell{padding-top:19px;padding-bottom:28px;scrollbar-gutter:auto}.bottominner{height:62px}.nav-item{min-height:58px;font-size:11px}}
+/* V4 — Small, purposeful assessment instead of the 10-item catch-all checklist. */
+.detail-journey{display:flex;align-items:center;gap:7px;margin-bottom:18px}
+.detail-journey span{flex:1;display:flex;align-items:center;gap:5px;font-size:12px;color:#688477;min-width:0;white-space:nowrap}
+.detail-journey b{width:24px;height:24px;display:inline-grid;place-items:center;border-radius:50%;font-size:11px;background:#e6f1e9;color:#357b5b}
+.detail-dose{padding:15px 17px;background:#edf5ef;border:1px solid #deebe1;border-radius:15px;display:flex;flex-direction:column;gap:5px;margin-bottom:16px}
+.detail-dose .eyebrow,.test-intro .eyebrow,.detail-next .eyebrow{display:block;letter-spacing:.09em;text-transform:uppercase;color:#527d65;font-weight:850;font-size:10px}
+.detail-dose strong{font-size:16px;color:#244d39;line-height:1.38}
+.detail-intro{font-size:14px;color:#526b5b;line-height:1.6;margin-bottom:18px}
+.detail-next{margin-top:18px;border-top:1px solid #e5ebe5;padding-top:18px}
+.detail-next p{color:#5f7769;font-size:13px;line-height:1.55;margin:7px 0 14px}
+.detail-buttons{display:flex;gap:9px;flex-wrap:wrap}
+.detail-buttons .btn{min-height:46px;flex:1}
+.detail-next small{display:block;color:#7f8e83;margin-top:10px;font-size:12px;line-height:1.5}
+.btn.done-outline{border-color:#aad8be;background:#edf8f0;color:#206d47}
+.test-intro{background:#f0f5ef;border-radius:17px;border:1px solid #e4ede3;padding:18px 18px 16px;margin-bottom:20px}
+.test-intro h3{font-size:19px;margin:7px 0 8px}
+.test-intro p{font-size:13px;color:#546b5c;line-height:1.6;margin:0 0 16px}
+.test-intro small{color:#547466;font-size:12px;line-height:1.45;display:block}
+.test-progress{display:flex;gap:8px;margin:0 0 10px}
+.test-progress span{height:7px;border-radius:30px;background:#d5dfd8;flex:1}
+.test-progress span.filled{background:#329572}
+.test-group{border:1px solid #e1e9e2;background:#fff;border-radius:17px;padding:14px 13px 3px;margin-bottom:13px}
+.test-section-label{display:flex;gap:11px;align-items:center;padding:0 3px 12px}
+.test-section-label>span{color:#45836b;font-size:11px;font-weight:840;background:#e5f2e9;width:30px;height:30px;border-radius:10px;display:grid;place-items:center;flex-shrink:0}
+.test-section-label strong{display:block;color:#244c39;font-size:15px}
+.test-section-label small{color:#849589;font-size:11px}
+.test-choice{display:flex;align-items:flex-start;gap:12px;cursor:pointer;padding:14px 8px;border-top:1px solid #f0f2ee;font-size:13px;line-height:1.55;color:#2b4c3a;min-height:53px;-webkit-tap-highlight-color:transparent}
+.test-choice input{position:relative;opacity:1;appearance:none;-webkit-appearance:none;flex:0 0 25px;width:25px;height:25px;margin:0;border:1.5px solid #9caea1;border-radius:8px;background:#fff;cursor:pointer}
+.test-choice input:checked{background:#2b8062;border-color:#2b8062}
+.test-choice input:checked::after{content:'✓';display:grid;place-items:center;color:white;font-size:16px;font-weight:850;line-height:22px}
+.test-tick{display:none}
+.test-choice:has(input:checked) .test-tick{background:#2b8062;border-color:#2b8062;color:white}
+.test-choice:has(input:checked){color:#315e46;background:#f8fcf9}
+.test-choice:has(input:focus-visible){outline:3px solid #82c7a4;outline-offset:-3px;border-radius:9px}
+.test-save{padding:12px 1px 8px}
+.test-counter{font-size:12px;color:#3d765a;font-weight:820;margin-bottom:9px}
+.test-save .btn{min-height:50px;font-size:14px}
+.test-save #testHint{color:#7a8b7e;font-size:12px;text-align:center;line-height:1.4;margin:9px 0 12px}
+.test-save .btn.ghost{color:#647a6d;border:1px solid #e4ebe4;background:#fff;min-height:45px}
+.test-save .btn:disabled{opacity:.48;cursor:not-allowed}
+.test-success,.empty-test{background:#eff7f1;border:1px solid #cce8d6;border-radius:16px;padding:19px;margin:13px 0 16px}
+.test-success strong,.empty-test h3{color:#266648;font-size:16px}
+.test-success p,.empty-test p{font-size:13px;line-height:1.56;color:#627969;margin:6px 0 0}
+.empty-test{background:#f6f7f4;border-color:#e7eae4}
+.empty-test .btn{margin-top:15px;min-height:45px}
+.test-history{margin-top:14px}
+.test-history h3{font-size:14px;margin-bottom:8px}
+.test-reset{margin:18px 0 0;font-size:12px}
+.pc-actions{display:grid;grid-template-columns:1fr;gap:8px;align-items:stretch}
+.pc-stage{grid-column:1 / -1;font-size:12px;min-width:0}
+.pc-check,.pc-assess{min-height:45px;padding:9px 7px;white-space:normal;font-size:12px}
+.pc-assess{border-color:#bbd8c5;background:#eff7f1;color:#2a7753;font-size:14px;min-height:48px;text-align:center}
+@media(max-width:540px){.sheet{max-height:calc(100dvh - env(safe-area-inset-top) - 8px)}.sheet-content{padding-bottom:calc(28px + env(safe-area-inset-bottom))}.detail-buttons{flex-direction:column}.test-choice{font-size:13px}}
+
+/* V5 — single action + persistent answers from the previous attempt */
+.restored-note{display:flex;align-items:flex-start;gap:10px;margin:-8px 0 17px;padding:11px 13px;border-radius:13px;border:1px solid #dce9de;background:#f7faf6;color:#506d59;font-size:12px;line-height:1.5}
+.restored-note>span:first-child{font-size:18px;color:#2f8665;line-height:1.1}
+.pc-actions .pc-assess{width:100%}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><div class="shell topinner"><div class="logo"><div class="mark">p.</div><div><strong>PILATES ATLAS</strong><span>Навыки и практика</span></div></div><div class="headmeta"><div class="headpill"><b id="headUnlocked">8</b> доступно</div><div class="headpill"><b id="headMastered">0</b><span> / 41</span></div></div></div><div class="headerbar"><i id="globalBar" style="width:0%"></i></div></header>
+<main class="shell" id="appMain" tabindex="-1">
+<section id="page-practice" class="page active">
+ <div class="page-head practice-head"><div><div class="kicker">ПРОСТРАНСТВО ПРАКТИКИ</div><h1>Твой темп. Твои навыки.</h1><p>Выбирай любые доступные упражнения. Без расписания по дням и обязательной частоты занятий.</p></div></div>
+ <div class="dash-summary">
+   <div class="dash-number"><b id="heroAvailable">8</b><span>доступно</span></div>
+   <div class="dash-number"><b id="heroMastered">0</b><span>освоено из 41</span></div>
+   <div class="dash-number"><b id="heroToday">0</b><span>отмечено сегодня</span></div>
+   <div class="dash-progress"><div class="meter"><i id="heroBar" style="width:0%"></i></div><span id="heroCaption">Начни с любого открытого упражнения</span></div>
+ </div>
+ <div class="section-title"><div><h2>Доступные упражнения</h2><p>После каждого выполнения отметь попытку. Даже неполный результат сохраняется.</p></div></div>
+ <div id="practiceFilters" class="practice-filters" role="group" aria-label="Фильтр упражнений"></div>
+ <div id="practiceCount" class="practice-count"></div>
+ <div id="workoutGrid" class="workout-grid practice-list"></div>
+ <div id="migrationNote" class="migration-note hide"><b>Правила зачёта обновлены.</b> Старые отметки сохранены, но зачёты по ранним шаблонным чек-листам не открывают новые упражнения.</div><div class="practice-explainer"><span class="explainer-icon">✓</span><div><strong>Одна отметка — одна попытка</strong><p>После упражнения открой чек-лист: ответы из прошлой попытки уже подставлены. Поправь отличия и сохрани. Все пункты выполнены — зачёт дня; не все — просто запись попытки. Два успешных дня открывают следующий навык.</p></div></div>
+ <div class="section-title"><div><h2>Скоро откроются</h2><p>Следующие навыки и то, что нужно для доступа к ним</p></div></div>
+ <div id="practiceSoon" class="soon-list"></div>
+</section>
+<section id="page-map" class="page">
+ <div class="page-head map-head"><div><div class="kicker">АТЛАС НАВЫКОВ</div><h1>Карта прогрессии</h1><p>Все 41 упражнение и их зависимости — от стартовых навыков к продвинутым.</p></div></div>
+ <div class="map-modes" role="group" aria-label="Вид карты"><button type="button" data-mapmode="branches">По направлениям</button><button type="button" data-mapmode="full" class="active">Дерево навыков</button></div>
+ <div id="branchesPane" class="hide">
+   <div id="branchOverview" class="branch-overview"></div>
+   <div id="branchDetail" class="branch-detail hide"><div class="branch-nav"><button id="branchBack" class="branch-back" type="button"><span>←</span> Все направления</button><button class="branch-full-link" id="branchFullLink">Весь граф ↗</button></div><div id="branchHeading"></div><div id="branchDiagram" class="branch-flow"></div></div>
+ </div>
+ <div id="mapFullPane">
+  <div class="map-context"><strong>Дерево навыков</strong><span>Слева направо — от простого к сложному. Выбери узел: его зависимости подсветятся, а подробности появятся ниже.</span></div>
+  <div class="map-toolbar"><div id="mapCats" class="map-cats"></div><div class="map-tools"><button id="mapExtras" class="btn icon" title="Показать или скрыть фоновые перекрёстные связи" aria-label="Фоновые перекрёстные связи">⌁</button><button id="mapFit" class="btn" title="Показать всю диаграмму">Вся схема</button></div></div>
+  <div class="map-frame" id="mapFrame"><button id="mapSelectedBar" class="map-selected" type="button" aria-label="Открыть разбор зависимостей"><span class="s-code">L2</span><span class="s-title">Side Leg Lift</span><span class="s-more">↓</span></button><svg id="mapSvg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Интерактивная диаграмма из 41 упражнения Pilates"></svg><div class="map-right"><button id="mapPlus" aria-label="Увеличить">+</button><button id="mapMinus" aria-label="Уменьшить">−</button><button id="mapCurrent" title="Перейти к доступному навыку" aria-label="Найти доступный навык">◎</button></div><div class="map-hint">Перемещай · два пальца для масштаба</div></div>
+  <div class="map-footer"><div class="legend"><span><i class="dot g"></i>Доступно</span><span><i class="dot a"></i>Освоено</span><span><i class="dot l"></i>Закрыто</span></div><div class="small muted">Цветные стрелки показывают цепочку выделенного навыка. Для разблокировки нужны ВСЕ входящие требования.</div></div>
+  <div id="relationPanel" class="relation-panel" aria-live="polite"></div>
+ </div>
+ <div class="section-title map-extra-title"><div><h2>Можно изучать сейчас</h2><p>Все открытые навыки, включая базовые</p></div></div><div id="mapAvailable" class="soon-list"></div>
+</section>
+<section id="page-catalog" class="page">
+ <div class="page-head"><div><div class="kicker">Все упражнения</div><h1>Библиотека навыков</h1><p>Восемь начальных карточек заполнены подробно. Карточки следующих упражнений будут расширяться в новых версиях приложения.</p></div></div>
+ <div class="catalog-top"><input id="searchInput" type="search" class="search" placeholder="Поиск по названию или коду…" autocomplete="off"><button class="btn" id="resetCatalog">Сбросить фильтры</button></div>
+ <div id="statusFilters" class="filterrow"></div><div id="catFilters" class="filterrow" style="margin-top:7px"></div>
+ <div id="catalogCount" class="results"></div><div id="catalogGrid" class="catalog-grid"></div>
+</section>
+<section id="page-progress" class="page">
+ <div class="page-head"><div><div class="kicker">История и данные</div><h1>Мой прогресс</h1><p>Девять веток, история занятий и резервное копирование. Данные хранятся на этом устройстве, не отправляются на сервер.</p></div></div>
+ <div class="stats"><div class="stat"><strong id="statMastered">0</strong><span>освоено</span></div><div class="stat"><strong id="statOpen">8</strong><span>доступно сейчас</span></div><div class="stat"><strong id="statSessions">0</strong><span>отметок занятий</span></div></div>
+ <div class="progress-layout"><div class="cardbox"><h3>Прогресс по направлениям</h3><div id="progressBranches"></div></div><div class="cardbox"><h3>Последние занятия</h3><div id="recentHistory"></div></div></div>
+ <div class="section-title"><div><h2>Данные и резервная копия</h2><p>Полезно сохранять копию, особенно при использовании Safari на iPhone</p></div></div>
+ <div class="cardbox"><div class="info-line">Приложение не требует аккаунта. Для надёжной работы на iPhone лучше открыть его по HTTPS и добавить на экран «Домой». При открытии HTML напрямую из «Файлов» постоянство хранилища зависит от режима просмотра. Экспортируй резервную копию перед очисткой браузера или переносом на другое устройство.</div><div id="storageWarning" class="alert-line">Локальное хранилище недоступно. Прогресс останется только до закрытия страницы. Воспользуйся экспортом JSON.</div><div class="settings-actions"><button id="exportBtn" class="btn primary">↓ Скачать резервную копию</button><button id="importBtn" class="btn">↑ Восстановить из JSON</button><button id="copyBtn" class="btn">Копировать JSON</button><button id="resetBtn" class="btn danger">Сбросить все данные</button></div><input id="importFile" type="file" accept=".json,application/json" class="hide"><p class="small muted" style="margin:14px 0 0">Резервная копия включает историю попыток, сохранённые ответы чек-листов, отметки занятий и освоенные навыки.</p></div>
+ </section>
+</main>
+<nav class="bottomnav" aria-label="Основная навигация"><div class="bottominner">
+<button class="nav-item active" data-route="practice"><span class="nav-bg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m4 8 8-5 8 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M9 21v-8h6v8"/></svg></span>Практика</button>
+<button class="nav-item" data-route="map"><span class="nav-bg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="5" cy="5" r="2.2"/><circle cx="19" cy="12" r="2.2"/><circle cx="5" cy="19" r="2.2"/><path d="m7 6.5 9.8 4.2M17 13.5 7 17.8"/></svg></span>Карта</button>
+<button class="nav-item" data-route="catalog"><span class="nav-bg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="8" rx="1.6"/><rect x="14" y="3" width="7" height="8" rx="1.6"/><rect x="3" y="15" width="7" height="6" rx="1.6"/><rect x="14" y="15" width="7" height="6" rx="1.6"/></svg></span>Упражнения</button>
+<button class="nav-item" data-route="progress"><span class="nav-bg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V11m5 9V5m5 15v-7m5 7V3" stroke-width="2.6"/></svg></span>Прогресс</button>
+</div></nav>
+<div id="modalOverlay" class="overlay" role="presentation"><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="detailTitle"><div class="sheet-top"><div class="sheet-title"><div id="detailMeta" class="small muted"></div><h2 id="detailTitle"></h2></div><button class="close-x" id="closeModal" aria-label="Закрыть">×</button></div><div class="sheet-content"><div class="sheet-tabs" id="detailTabs"><button class="active" data-detailtab="technique">Техника</button><button data-detailtab="assessment">Отметка</button></div><div id="detailBody"></div></div></div></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</div>
+<script>
+(()=>{'use strict';
+const STORAGE='pilates-atlas-v1';
+const CATS=[
+ {id:'A',title:'Корпус и ноги',short:'Контроль корпуса',color:'#dceee9'},
+ {id:'B',title:'Таз и ягодицы',short:'Мосты',color:'#f1eadf'},
+ {id:'C',title:'Перекат и баланс',short:'Баланс',color:'#eee8f5'},
+ {id:'D',title:'Задняя цепь и опора',short:'Задняя цепь',color:'#e6edf5'},
+ {id:'E',title:'Разгибание спины',short:'Разгибание',color:'#f2eae7'},
+ {id:'L',title:'Боковой контроль',short:'Боковые движения',color:'#e6f2ed'},
+ {id:'M',title:'Сидя: подвижность',short:'Подвижность сидя',color:'#eff0e3'},
+ {id:'O',title:'Контроль таза при кругах',short:'Круги ногами',color:'#ebeafa'},
+ {id:'P',title:'Передняя опора',short:'Планки',color:'#e6eeec'}
+];
+const all=[];const add=(id,title,cat,req,dose,level='middle',extras=[])=>all.push({id,title,cat,req,dose,level,extras,starter:false});
+add('F0','Дыхание и таз/рёбра','F',[],'8 дыхательных циклов, 8 наклонов таза, 5 циклов в нейтрали','start');
+add('A1','Скольжение пяткой','A',[],'2 × 8 на каждую ногу','start');
+add('A2','Knee Fold','A',['A1'],'2 × 8 на сторону','start');
+add('A3','Toe Taps','A',['A2'],'2 × 8 на сторону');
+add('A4','Dead Bug','A',['A3'],'2 × 6 на сторону');
+add('A5','Single Leg Stretch','A',['A4'],'2 × 8 на сторону, голова на коврике');
+add('A6','Double Leg Stretch','A',['A5'],'2 × 6, голова на коврике','advanced');
+add('B1','Pelvic Curl','B',[],'2 × 8, пауза 2 секунды','start');
+add('B2','Shoulder Bridge с паузой','B',['B1'],'3 × 20 секунд','start');
+add('B3','Bridge March','B',['B2'],'2 × 6 на сторону');
+add('B4','Shoulder Bridge с вытянутой ногой','B',['B3'],'2 × 5 на сторону, удержание 2 секунды','advanced');
+add('C1','Half Roll Back','C',[],'2 × 8, пауза 2 секунды','start');
+add('C2','Roll Up с согнутыми коленями','C',['C1'],'2 × 5');
+add('C3','Roll Up','C',['C2'],'2 × 5');
+add('C4','Teaser Prep','C',['C3','A3'],'2 × 5, удержание 3 секунды');
+add('C5','Teaser с одной согнутой ногой','C',['C4'],'2 × 5','advanced');
+add('C6','Полный Teaser','C',['C5','A6'],'2 × 3, удержание 3 секунды','advanced');
+add('D1','Опора на четвереньках','D',[],'2 × 30 секунд + по 5 переносов веса','start');
+add('D2','Bird Dog','D',['D1'],'2 × 6 на сторону, удержание 3 секунды');
+add('D3','Диагональные подъёмы лёжа на животе','D',['D2','E1'],'2 × 8 на сторону');
+add('D4','Swimming','D',['D3','E2'],'2 × 20 чередований','advanced');
+add('E1','Малый подъём груди лёжа на животе','E',[],'2 × 8, пауза 2 секунды','start');
+add('E2','Swan Prep','E',['E1'],'2 × 8');
+add('E3','Swan','E',['E2'],'2 × 5','advanced');
+add('L1','Clamshell','L',[],'2 × 12 на каждую сторону','start');
+add('L2','Side Leg Lift','L',['L1'],'2 × 10 на сторону','start');
+add('L3','Side Kick вперёд/назад','L',['L2'],'2 × 6 циклов на сторону');
+add('L4','Kneeling Side Kick','L',['L3','D2'],'2 × 6 на сторону','advanced');
+add('L5','Боковая планка с колен','L',['L2'],'2 × 20 секунд на сторону');
+add('L6','Полная боковая планка','L',['L5'],'2 × 30 секунд на сторону');
+add('L7','Side Bend','L',['L6'],'2 × 5 на сторону','advanced');
+add('M1','Ровная посадка и дыхание','M',[],'2 × 40 секунд','start');
+add('M2','Spine Stretch','M',['M1'],'2 × 6');
+add('M3','Spine Twist','M',['M1'],'2 × 6 на сторону');
+add('M4','Saw','M',['M2','M3'],'2 × 5 на сторону','advanced');
+add('O1','Круг согнутым коленом','O',['A2'],'2 × 8 кругов на сторону в каждом направлении','start');
+add('O2','One Leg Circle','O',['O1'],'2 × 5 кругов в каждом направлении на каждую ногу');
+add('O3','Малый Corkscrew (таз на полу)','O',['O2','A4'],'2 × 5 кругов в каждом направлении','advanced');
+add('P1','Планка с колен','P',['D1'],'2 × 30 секунд','start');
+add('P2','Полная планка','P',['P1'],'2 × 30 секунд');
+add('P3','Leg Pull Front','P',['P2','D2'],'2 × 6 подъёмов на сторону','advanced');
+const BY_ID=Object.fromEntries(all.map(n=>[n.id,n]));
+const FOUNDATION=['A1','B1','C1','D1','E1','L1','M1'];
+const STARRERS={
+ F0:{short:'Базовый навык дыхания и контроля положения корпуса.', setup:'Ляг на спину, согни колени, поставь стопы на пол. Ладони положи на нижние рёбра.',steps:['На вдохе разреши нижним рёбрам расширяться в стороны и немного назад. Не поднимай плечи к ушам.','На спокойном выдохе позволь рёбрам мягко опуститься. Не втягивай живот с максимальным усилием.','Слегка подкрути таз, приблизив поясницу к коврику, затем верни небольшой естественный прогиб. Сделай 8 медленных повторений.','Найди комфортную нейтраль таза и подыши 5 циклов без лишнего напряжения.'],mistakes:['Задержка дыхания или чрезмерное напряжение живота.','Подъём плеч и жёсткая грудная клетка.','Постоянное насильное прижатие поясницы к полу.'],safety:'Положение должно оставаться комфортным; нет цели «выключить» естественный изгиб поясницы.'},
+ A1:{short:'Учимся двигать ногой, не раскачивая таз.',setup:'Ляг на спину, согни обе ноги, поставь стопы на ширине таза. Руки вдоль корпуса.',steps:['На выдохе медленно скользи одной пяткой вперёд по полу, почти выпрямляя ногу.','Сохраняй положение рёбер и таза. Если поясница сильнее прогибается, сократи амплитуду.','На вдохе верни стопу к тазу. Повтори другой ногой.','Двигайся примерно по 2 секунды в каждую сторону, без ускорения.'],mistakes:['Таз поворачивается к движущейся ноге.','Поясница прогибается сильнее при разгибании.','Пятка отрывается от пола или движение выполняется рывком.'],safety:'Не нужно максимально разгибать колено; используй комфортную амплитуду.'},
+ B1:{short:'Поочерёдный подъём таза и контроль разгибания бедра.',setup:'Ляг на спину, согни колени, поставь стопы приблизительно на ширине таза. Руки вдоль корпуса.',steps:['На выдохе мягко подкрути таз назад.','Начни поднимать таз, постепенно отрывая от коврика нижние отделы спины.','Поднимись до комфортной линии между плечами, тазом и коленями. Держи колени направленными вперёд.','Задержись на 2 секунды и плавно опускайся, завершая движение тазом.'],mistakes:['Отталкивание головой или давление на шею.','Сильный прогиб поясницы вверху.','Колени расходятся либо заваливаются внутрь.'],safety:'Опора на стопы и верхнюю часть спины, не на шею. При неприятных ощущениях в шее остановись.'},
+ C1:{short:'Контролируемое сгибание и возврат без инерции.',setup:'Сядь, согни колени, поставь стопы на коврик. Держись ладонями за заднюю поверхность бёдер.',steps:['Выпрямись вверх, затем на выдохе немного подкрути таз назад.','Сделай короткий откат туловища назад, формируя мягкую C-образную линию спины.','Задержись на 2 секунды там, где можешь сохранять контроль.','Вернись в исходное положение без рывка и отталкивания ногами.'],mistakes:['Резкое падение назад или рывок для возвращения.','Сильное сгибание и напряжение шеи.','Отрыв стоп от пола.'],safety:'При болезненном сгибании позвоночника сократи амплитуду или пропусти движение до очной оценки.'},
+ D1:{short:'Стабильная опора на кисти и колени для Bird Dog и планок.',setup:'Встань на четвереньки: кисти под плечами, колени под тазобедренными суставами. Смотри в пол.',steps:['Найди комфортное нейтральное положение позвоночника и шеи.','Мягко оттолкнись ладонями от пола, не проваливаясь между лопатками.','Дыши свободно 30 секунд, не меняя форму корпуса.','Сделай по 5 небольших переносов веса вперёд-назад и в стороны, сохраняя таз стабильным.'],mistakes:['Провисание поясницы или чрезмерное округление спины.','Запрокидывание головы вверх.','Перекос таза при переносах веса.'],safety:'При боли в запястьях, пальце или незажившей ране отложи опору на кисти. Нельзя компенсировать боль нагрузкой.'},
+ E1:{short:'Малое разгибание грудного отдела с нейтральной шеей.',setup:'Ляг на живот, ноги на комфортной ширине. Руки вдоль корпуса либо рядом с плечами, лоб направлен к коврику.',steps:['На вдохе потянись макушкой вперёд, удлиняя шею.','На выдохе слегка приподними верх груди на несколько сантиметров.','Не запрокидывай голову и не пытайся подняться высоко за счёт поясницы.','Задержись на 2 секунды, затем плавно опустись на коврик.'],mistakes:['Голова запрокидывается назад.','Глубокий прогиб поясницы вместо небольшого движения грудной клетки.','Плечи поднимаются к ушам.'],safety:'При дискомфорте в спине ограничь амплитуду. Не прогибайся через боль.'},
+ L1:{short:'Независимое движение бедра при неподвижном тазе.',setup:'Ляг на бок, колени согнуты примерно до 90°, стопы вместе. Подложи под голову руку или полотенце.',steps:['Расположи таз строго друг над другом, не заваливай его назад.','Удерживая пятки вместе, подними верхнее колено настолько, насколько позволяет таз без вращения.','Задержись наверху на 2 секунды.','Медленно опусти колено и повтори на другой стороне.'],mistakes:['Таз откатывается назад за верхним коленом.','Пятки отрываются друг от друга.','Слишком большая амплитуда ценой вращения поясницы.'],safety:'Амплитуда небольшая — это нормально. Не провоцируй боль в тазобедренном суставе.'},
+ M1:{short:'Устойчивая посадка и свободное дыхание без опоры на руки.',setup:'Сядь на седалищные кости. Колени можно согнуть. Если таз заваливается назад, подложи под него сложенное полотенце.',steps:['Удлини позвоночник вверх, не переразгибая поясницу.','Опусти плечи, расположи нижние рёбра над тазом.','Дыши спокойно, сохраняя положение корпуса.','Слегка поворачивай голову вправо-влево, не теряя вертикальности.'],mistakes:['Жёсткое выпячивание нижних рёбер.','Плечи подняты, живот зажат ради удержания позы.','Приходится постоянно опираться руками.'],safety:'Не надо насильно выпрямлять колени; удобная опора под таз допустима.'}
+};
+for(const [id,info] of Object.entries(STARRERS))Object.assign(BY_ID[id],info,{starter:true});
+const MASTERY_CHECKS={
+ F0:[
+  'На вдохе нижние рёбра расширялись в стороны, плечи не поднимались.',
+  'При наклонах таза грудная клетка оставалась почти неподвижной.',
+  'Нейтральное положение таза удерживалось без напряжённого прижатия поясницы.'
+ ],
+ A1:[
+  'Во время скольжения таз не поворачивался вслед за ногой.',
+  'При выпрямлении ноги прогиб поясницы заметно не увеличивался.',
+  'Пятка скользила по полу, возврат выполнялся плавно, без рывка.'
+ ],
+ B1:[
+  'Подъём начинался с мягкого подкручивания таза, без толчка.',
+  'В верхней точке колени оставались направлены над стопами, без сильного прогиба поясницы.',
+  'Опускание было последовательным; голова и шея не использовались для отталкивания.'
+ ],
+ C1:[
+  'В откате сохранялась плавная округлая линия спины без падения назад.',
+  'Во время паузы стопы оставались на полу.',
+  'Возвращение происходило без рывка руками и без запрокидывания головы.'
+ ],
+ D1:[
+  'Кисти располагались под плечами, колени — под тазом, шея продолжала линию спины.',
+  'При переносе веса таз не раскачивался из стороны в сторону.',
+  'Лопатки не проваливались, а поясница не уходила в глубокий прогиб.'
+ ],
+ E1:[
+  'Шея оставалась длинной, взгляд направлялся в коврик, без запрокидывания головы.',
+  'Таз сохранял контакт с ковриком.',
+  'Грудная клетка поднималась немного, без выраженного усиления прогиба поясницы.'
+ ],
+ L1:[
+  'Пятки оставались вместе на протяжении всех повторений.',
+  'Таз не откатывался назад вслед за верхним коленом.',
+  'Колено поднималось лишь до границы устойчивости таза, затем медленно опускалось.'
+ ],
+ M1:[
+  'Корпус удерживался вертикально без опоры на руки.',
+  'Нижние рёбра оставались над тазом, без чрезмерного поясничного прогиба.',
+  'Спокойное дыхание и небольшие повороты головы не нарушали положение корпуса.'
+ ]
+};
+const COMMON_SAFETY='Во время упражнения не было боли, онемения или неприятной нагрузки на шею и суставы.';
+
+const FUTURE_HINTS={A2:'Подъём согнутой ноги к tabletop без движения таза.',A3:'Поочерёдное касание пола носком из положения tabletop.',A4:'Одновременное движение противоположных руки и ноги при стабильном корпусе.',A5:'Поочерёдное вытяжение одной ноги, голова на коврике.',A6:'Одновременное вытяжение двух ног и рук; голова поддерживается ковриком.',B2:'Удержание верхней точки моста с ровным тазом.',B3:'Поочерёдный подъём стопы в мосту без перекоса таза.',B4:'Мост с вытянутой ногой без потери стабильности.',C2:'Контролируемый откат до пола и подъём с согнутыми коленями.',C3:'Полный Roll Up без инерции и отрыва ног.',C4:'Подготовительный баланс Teaser с согнутыми ногами.',C5:'Teaser с одной согнутой ногой и контролируемым спуском.',C6:'Полный Teaser: обе ноги вытянуты в доступной амплитуде.',D2:'Противоположная рука и нога вытянуты из положения на четвереньках.',D3:'Диагональные подъёмы рук и ног лёжа на животе.',D4:'Попеременное удлинение противоположных руки и ноги в положении лёжа на животе.',E2:'Подготовительное разгибание грудного отдела с помощью рук.',E3:'Продвинутое разгибание грудного отдела без болезненного сжатия поясницы.',L2:'Подъём прямой ноги лёжа на боку с неподвижным тазом.',L3:'Мах прямой ногой вперёд-назад без раскачивания корпуса.',L4:'Боковой мах ногой в опоре на колено и руку.',L5:'Боковая планка с опорой на колени и предплечье.',L6:'Боковая планка с прямыми ногами.',L7:'Подъём таза и контролируемый боковой изгиб в Side Bend.',M2:'Плавное сгибание позвоночника вперёд из положения сидя.',M3:'Поворот грудной клетки из вертикальной посадки без вращения таза.',M4:'Сочетание поворота корпуса и наклона к противоположной ноге.',O1:'Малые круги согнутой ногой без вращения таза.',O2:'Круги одной выпрямленной ногой без движения таза.',O3:'Малые круги двумя ногами с тазом на коврике.',P1:'Планка с опорой на колени.',P2:'Полная планка с устойчивыми лопатками и тазом.',P3:'В планке попеременный подъём ног без вращения таза.'};
+const CAUTION_IDS=new Set(['C2','C3','C4','C5','C6','D4','E2','E3','O3']);
+function safeLoad(){try{return JSON.parse(localStorage.getItem(STORAGE)||'null')}catch{return null}}
+const blank=()=>({version:5,done:{},assessments:{},pinned:[]});
+let state=blank();const loaded=safeLoad();if(loaded&&typeof loaded==='object'){state={...blank(),...loaded,done:loaded.done||{},assessments:loaded.assessments||{},pinned:Array.isArray(loaded.pinned)?loaded.pinned.filter(x=>BY_ID[x]):[]};delete state.edits}
+let storageOK=true;try{localStorage.setItem('_atlas_probe','1');localStorage.removeItem('_atlas_probe')}catch{storageOK=false}
+const save=()=>{try{localStorage.setItem(STORAGE,JSON.stringify(state))}catch{storageOK=false;const w=document.getElementById('storageWarning');if(w)w.style.display='block'}};
+const today=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
+const fmtDate=d=>{if(!d)return'';const x=d.split('-');return x.length===3?`${x[2]}.${x[1]}.${x[0]}`:d};
+const catTitle=n=>n.cat==='F'?'Общая база':CATS.find(c=>c.id===n.cat)?.title||'';
+
+const entryFor=id=>{const n=BY_ID[id];return {...n,setup:n.setup||'',steps:n.steps||[],mistakes:n.mistakes||[],safety:n.safety||'',short:n.short||FUTURE_HINTS[id]||'Краткая карточка будущего навыка.'}};
+const assessments=id=>Array.isArray(state.assessments[id])?state.assessments[id]:[];
+// A successful day counts once, even when several attempts are saved that day.
+// A later unsuccessful attempt does not undo an earlier confirmed day.
+const goodDays=id=>new Set(assessments(id).filter(x=>x&&x.pass===true&&x.mode==='checked'&&x.criteriaVersion>=4&&/^\d{4}-\d{2}-\d{2}$/.test(x.date||'')).map(x=>x.date)).size;
+const mastered=id=>goodDays(id)>=2;
+const hasLegacy=()=>Object.values(state.assessments).some(logs=>Array.isArray(logs)&&logs.some(x=>x.pass&&!(x.criteriaVersion>=4)));
+const starter=id=>id==='F0'||FOUNDATION.includes(id);
+const unlocked=id=>mastered(id)||starter(id)||BY_ID[id].req.every(mastered);
+const status=id=>mastered(id)?'mastered':unlocked(id)?'open':'locked';
+const missing=id=>BY_ID[id].req.filter(x=>!mastered(x));
+const validObj=o=>o&&typeof o==='object'&&!Array.isArray(o);
+const esc=s=>String(s??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const el=id=>document.getElementById(id);
+const sum=id=>status(id)==='mastered'?'Освоено':status(id)==='open'?'Доступно':'Закрыто';
+const pill=id=>`<span class="pill ${status(id)==='mastered'?'done':status(id)==='open'?'open':'lock'}">${status(id)==='mastered'?'✓ ':status(id)==='locked'?'○ ':''}${sum(id)}</span>`;
+const totalDone=()=>all.filter(n=>mastered(n.id)).length;
+const totalOpen=()=>all.filter(n=>unlocked(n.id)&&!mastered(n.id)).length;
+const allDone=()=>Object.values(state.done).reduce((a,b)=>a+(Array.isArray(b)?b.length:0),0);
+let toastTimer;
+function toast(msg){const t=el('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2600)}
+function route(dest){if(!['practice','map','catalog','progress'].includes(dest))return;document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id==='page-'+dest));document.querySelectorAll('[data-route]').forEach(x=>x.classList.toggle('active',x.getAttribute('data-route')===dest&&x.classList.contains('nav-item')));el('appMain').scrollTo({top:0,behavior:'instant'});if(dest==='map'){renderBranches();renderMapStatus();if(mapMode==='full'){requestAnimationFrame(()=>{if(!mapInit){mapInit=true;focusNode(mapSelection||'L2')}else applyMapView()})}}if(dest==='catalog')renderCatalog();if(dest==='progress')renderProgress()}
+
+function isDoneToday(id){return Array.isArray(state.done[today()])&&state.done[today()].includes(id)}
+let practiceMode='working';
+const practiceModes=[['working','В работе'],['pinned','Мой набор'],['mastered','Освоено'],['all','Все доступные']];
+function practiceItems(){const accessible=all.filter(n=>unlocked(n.id));if(practiceMode==='working')return accessible.filter(n=>!mastered(n.id));if(practiceMode==='mastered')return accessible.filter(n=>mastered(n.id));if(practiceMode==='pinned')return accessible.filter(n=>state.pinned.includes(n.id));return accessible;}
+function togglePinned(id){if(!unlocked(id))return;const a=Array.isArray(state.pinned)?state.pinned:[];state.pinned=a.includes(id)?a.filter(x=>x!==id):[...a,id];save();renderPractice();toast(state.pinned.includes(id)?'Добавлено в мой набор':'Убрано из моего набора')}
+function upcoming(){return all.filter(n=>!unlocked(n.id)&&missing(n.id).every(unlocked)).sort((a,b)=>missing(a.id).length-missing(b.id).length||a.id.localeCompare(b.id,'ru'))}
+function renderSoon(element,ids){element.innerHTML=ids.map(id=>{const n=BY_ID[id],m=missing(id);return `<button class="soon" data-open="${id}"><b>${id} · ${esc(n.title)}</b><span>${unlocked(id)?'Можно изучать':`Нужно освоить: ${m.map(x=>x).join(' + ')}`}</span></button>`}).join('')||'<p class="muted small">Все упражнения открыты!</p>'}
+function renderPractice(){
+ el('migrationNote').classList.toggle('hide',!hasLegacy());
+ el('heroMastered').textContent=totalDone();el('heroAvailable').textContent=totalOpen()+totalDone();el('heroToday').textContent=(state.done[today()]||[]).length;
+ el('heroBar').style.width=(totalDone()/all.length*100)+'%';el('heroCaption').textContent=totalDone()?`Освоено ${totalDone()} из ${all.length} навыков`:'Никаких обязательных дней — просто выбирай упражнение';
+ el('practiceFilters').innerHTML=practiceModes.map(([key,label])=>`<button type="button" data-practicemode="${key}" class="${practiceMode===key?'active':''}">${label}${key==='pinned'&&state.pinned.length?` <small>${state.pinned.length}</small>`:''}</button>`).join('');
+ const list=practiceItems();el('practiceCount').textContent=`${list.length} ${list.length===1?'упражнение':list.length>=2&&list.length<=4?'упражнения':'упражнений'} · выполняй в любом порядке`;
+ el('workoutGrid').innerHTML=list.map(raw=>{const id=raw.id,n=entryFor(id),done=isDoneToday(id),pin=state.pinned.includes(id),count=Math.min(2,goodDays(id)),st=status(id);return `<article class="practice-card ${done?'was-done':''}">
+ <div class="pc-main"><button class="pc-open" data-open="${id}"><span class="pc-overline">${id} <span aria-hidden="true">·</span> ${esc(catTitle(n))}</span><strong>${esc(n.title)}</strong><span class="pc-dose">${esc(n.dose)}</span></button><button data-pin="${id}" class="pc-pin ${pin?'selected':''}" aria-label="${pin?'Убрать из моего набора':'Добавить в мой набор'}" title="${pin?'В моём наборе':'В мой набор'}">${pin?'★':'☆'}</button></div>
+ <div class="pc-actions"><span class="pc-stage ${st==='mastered'?'is-mastered':''}">${st==='mastered'?'✓ Освоено':count?`Подтверждено ${count}/2 дней`:'Изучается'}${done?' · ✓ сегодня':''}</span><button class="pc-assess" data-open-assess="${id}" aria-label="${done?'Изменить отметку':'Отметить попытку'} ${esc(n.title)}">${done?'✓ Изменить отметку':'＋ Отметить попытку'} <span aria-hidden="true">↗</span></button></div>
+ </article>`}).join('')||`<div class="practice-empty"><span>✧</span><h3>${practiceMode==='pinned'?'Твой набор пока пуст':'Здесь пока нет упражнений'}</h3><p>${practiceMode==='pinned'?'Добавляй понравившиеся упражнения звёздочкой из раздела «В работе» или «Все доступные».':'Попробуй другой фильтр — освоенные навыки остаются доступными для повторения.'}</p><button class="btn primary" data-practicemode="all">Показать доступные</button></div>`;
+ renderSoon(el('practiceSoon'),upcoming().slice(0,6).map(n=>n.id));}
+let catalogStat='all',catalogCat='all',catalogSearch='';
+function renderCatalog(){const filters=[['all','Все',all.length],['open','Доступные',totalOpen()],['mastered','Освоенные',totalDone()],['locked','Закрытые',all.length-totalOpen()-totalDone()]];el('statusFilters').innerHTML=filters.map(([k,t,count])=>`<button class="filter ${catalogStat===k?'active':''}" data-stat="${k}">${t} · ${count}</button>`).join('');el('catFilters').innerHTML=[{id:'all',title:'Все направления'},...CATS,{id:'F',title:'База'}].map(c=>`<button class="filter ${catalogCat===c.id?'active':''}" data-cat="${c.id}">${esc(c.title)}</button>`).join('');const s=catalogSearch.trim().toLocaleLowerCase('ru');const items=all.filter(n=>(catalogStat==='all'||status(n.id)===catalogStat)&&(catalogCat==='all'||n.cat===catalogCat)&&(!s||`${n.title} ${n.id} ${catTitle(n)}`.toLocaleLowerCase('ru').includes(s))).sort((a,b)=>{const st={open:0,mastered:1,locked:2};return st[status(a.id)]-st[status(b.id)]||all.indexOf(a)-all.indexOf(b)});el('catalogCount').textContent=`Показано ${items.length} из ${all.length} упражнений`;el('catalogGrid').innerHTML=items.map(n=>`<button class="exercise-card ${status(n.id)==='locked'?'locked-skill':'active-skill'}" data-open="${n.id}"><div class="ex-top"><span class="ex-id">${n.id}</span>${pill(n.id)}</div><h3>${esc(n.title)}</h3><small>${esc(catTitle(n))}</small><div class="ex-bottom">${status(n.id)==='locked'?`Нужно: ${missing(n.id).join(' + ')}`:esc(n.dose)}</div></button>`).join('')||'<div class="cardbox">Ничего не найдено. Попробуй другой фильтр.</div>'}
+function renderProgress(){el('statMastered').textContent=totalDone();el('statOpen').textContent=totalOpen();el('statSessions').textContent=allDone();el('progressBranches').innerHTML=[{id:'F',title:'Общая база'},...CATS].map(c=>{const arr=all.filter(n=>n.cat===c.id),count=arr.filter(n=>mastered(n.id)).length;return `<div class="cat-progress"><span class="catname">${esc(c.title)}</span><div class="meter"><i style="width:${100*count/arr.length}%"></i></div><span class="fraction">${count}/${arr.length}</span></div>`}).join('');const hist=[];for(const [day,ids] of Object.entries(state.done))if(Array.isArray(ids))ids.forEach(id=>{if(BY_ID[id]&&!assessments(id).some(x=>x.date===day))hist.push({id,day,desc:'Тренировка'})});for(const [id,logs] of Object.entries(state.assessments))if(BY_ID[id]&&Array.isArray(logs))logs.forEach(x=>hist.push({id,day:x.date,desc:x.pass&&x.criteriaVersion>=4?'Зачёт техники':Array.isArray(x.checks)&&x.checks.length?`Попытка · ${x.checks.filter(Boolean).length}/${x.checks.length}`:'Попытка без зачёта'}));hist.sort((a,b)=>b.day.localeCompare(a.day));el('recentHistory').innerHTML=hist.slice(0,7).map(h=>`<div class="history"><div style="flex:1"><strong>${esc(BY_ID[h.id].title)}</strong><span>${h.id} · ${h.desc}</span></div><span class="date">${fmtDate(h.day)}</span></div>`).join('')||'<p class="small muted" style="margin-top:10px">Здесь появятся выполненные занятия и зачёты по чек-листам.</p>';el('storageWarning').style.display=storageOK?'none':'block'}
+function renderAll(){el('headUnlocked').textContent=totalOpen();el('headMastered').textContent=totalDone();el('globalBar').style.width=(totalDone()/all.length*100)+'%';renderPractice();renderCatalog();renderProgress();renderMapStatus();if(el('branchOverview'))renderBranches();}
+// -------- Clear, mobile-first skill-map navigation --------
+let mapMode='full',activeBranch=null;
+const CAT_ICONS={A:'◌',B:'⌁',C:'∿',D:'↗',E:'⌒',L:'◐',M:'↻',O:'○',P:'⌗'};
+function setMapMode(mode){if(mode!=='branches'&&mode!=='full')return;mapMode=mode;el('branchesPane').classList.toggle('hide',mode!=='branches');el('mapFullPane').classList.toggle('hide',mode!=='full');document.querySelectorAll('[data-mapmode]').forEach(b=>b.classList.toggle('active',b.dataset.mapmode===mode));if(mode==='branches')renderBranches();else requestAnimationFrame(()=>{if(!mapInit){mapInit=true;focusNode(mapSelection||'L2')}else applyMapView()})}
+function showBranch(id){if(!CATS.some(c=>c.id===id))return;activeBranch=id;renderBranches();document.getElementById('branchDetail').scrollIntoView({behavior:'smooth',block:'start'})}
+function renderBranches(){const overview=el('branchOverview'),detail=el('branchDetail');overview.classList.toggle('hide',!!activeBranch);detail.classList.toggle('hide',!activeBranch);if(!activeBranch){overview.innerHTML=`<div class="branch-intro"><span class="branch-intro-icon">◎</span><div><strong>Сначала — общая база</strong><p>Дыхание и контроль положения таза пригодятся во всех направлениях.</p></div><button data-open="F0" class="btn">F0 ↗</button></div><div class="branch-grid">${CATS.map((c,i)=>{const nodes=all.filter(n=>n.cat===c.id),done=nodes.filter(n=>mastered(n.id)).length,available=nodes.filter(n=>unlocked(n.id)&&!mastered(n.id)).length;return `<button class="branch-tile" data-branch="${c.id}" style="--branch-accent:${c.color}"><div class="branch-tile-top"><span class="branch-glyph">${CAT_ICONS[c.id]}</span><span class="branch-index">0${i+1}</span></div><strong>${esc(c.title)}</strong><span class="branch-sub">${available?`${available} доступно сейчас`:'Следующие навыки пока закрыты'}</span><div class="branch-bottom"><span class="branch-track"><i style="width:${done/nodes.length*100}%"></i></span><span>${done}/${nodes.length} <span aria-hidden="true">↗</span></span></div></button>`}).join('')}</div>`;return}
+ const cat=CATS.find(c=>c.id===activeBranch),nodes=all.filter(n=>n.cat===activeBranch),done=nodes.filter(n=>mastered(n.id)).length;
+ el('branchHeading').innerHTML=`<div class="selected-branch" style="--branch-accent:${cat.color}"><span class="selected-glyph">${CAT_ICONS[cat.id]}</span><div><span class="kicker">НАПРАВЛЕНИЕ ${cat.id} · ${nodes.length} УПРАЖНЕНИЙ</span><h2>${esc(cat.title)}</h2><p>${done} освоено · ${nodes.filter(n=>unlocked(n.id)&&!mastered(n.id)).length} доступно сейчас</p></div></div>`;
+ const memo={};const depth=id=>{if(memo[id]!=null)return memo[id];const n=BY_ID[id];return memo[id]=1+Math.max(-1,...n.req.filter(r=>BY_ID[r].cat===activeBranch).map(depth))};
+ const grouped={};nodes.forEach(n=>{const d=depth(n.id);(grouped[d]||(grouped[d]=[])).push(n)});
+ el('branchDiagram').innerHTML=`<div class="diagram-guide"><span>От простого к сложному</span><span>Нажми на навык, чтобы открыть карточку</span></div>${Object.keys(grouped).sort((a,b)=>a-b).map((level,index)=>`<div class="flow-level"><div class="flow-step"><span>${index===0?'СТАРТ':`ШАГ ${index+1}`}</span></div><div class="flow-nodes ${grouped[level].length>1?'flow-split':''}">${grouped[level].map(n=>{const st=status(n.id),cross=n.req.filter(r=>BY_ID[r].cat!==activeBranch),local=n.req.filter(r=>BY_ID[r].cat===activeBranch);return `<div class="flow-node ${st}" data-flow-id="${n.id}" ><button class="flow-node-main" data-open="${n.id}"><span class="flow-node-code">${n.id}<span>${st==='mastered'?'✓ освоено':st==='open'?'● доступно':'○ закрыто'}</span></span><strong>${esc(n.title)}</strong><small>${esc(n.dose)}</small></button><div class="flow-req">${local.map(r=>`<button data-open="${r}" title="Предыдущий навык">↖ ${r}</button>`).join('')}${cross.map(r=>`<button class="cross-req" data-open="${r}" title="Дополнительное обязательное условие">↗ ${r} · ${esc(BY_ID[r].title)}</button>`).join('')||(!n.req.length?'<span>Первый навык ветки</span>':'')}</div></div>`}).join('')}</div>${index<Object.keys(grouped).length-1?'<div class="flow-connector"></div>':''}</div>`).join('')}<div class="diagram-end">Конец ветки. Освоенные навыки можно повторять в любой момент.</div>`;
+ requestAnimationFrame(drawBranchEdges);
+}
+function drawBranchEdges(){const host=el('branchDiagram');if(!host||!activeBranch||mapMode!=='branches'||!host.offsetWidth)return;host.querySelector('.branch-links-svg')?.remove();const rect=host.getBoundingClientRect(),svg=sEl('svg',{class:'branch-links-svg',width:host.scrollWidth,height:host.scrollHeight,viewBox:`0 0 ${host.scrollWidth} ${host.scrollHeight}`,'aria-hidden':'true'});const defs=sEl('defs');const marker=sEl('marker',{id:'branchArrow',viewBox:'0 0 10 10',refX:8,refY:5,markerWidth:5,markerHeight:5,orient:'auto'});marker.appendChild(sEl('path',{d:'M0 0 L10 5 L0 10 Z',fill:'#90b49c'}));defs.appendChild(marker);svg.appendChild(defs);for(const n of all.filter(x=>x.cat===activeBranch)){const target=host.querySelector(`[data-flow-id="${n.id}"]`);if(!target)continue;const t=target.getBoundingClientRect(),tx=t.left+t.width/2-rect.left,ty=t.top-rect.top-4;for(const parent of n.req.filter(x=>BY_ID[x].cat===activeBranch)){const source=host.querySelector(`[data-flow-id="${parent}"]`);if(!source)continue;const r=source.getBoundingClientRect(),sx=r.left+r.width/2-rect.left,sy=r.bottom-rect.top+3,dy=ty-sy;const path=sEl('path',{d:`M ${sx} ${sy} C ${sx} ${sy+dy*.54} ${tx} ${ty-dy*.54} ${tx} ${ty}`,fill:'none',stroke:'#90b49c','stroke-width':2,'stroke-linecap':'round','marker-end':'url(#branchArrow)'});svg.appendChild(path)}}host.prepend(svg)}
+// ---- Pilates skill map v3: lane-based DAG + dependency spotlight ----
+const SN='http://www.w3.org/2000/svg';
+const sEl=(tag,attrs={})=>{const x=document.createElementNS(SN,tag);for(const [k,v] of Object.entries(attrs))x.setAttribute(k,String(v));return x};
+const NW=222,NH=86;
+const laneDefs=[
+ {id:'A',y:185,h:150}, {id:'B',y:352,h:150}, {id:'C',y:519,h:150},
+ {id:'D',y:686,h:150}, {id:'E',y:853,h:150}, {id:'L',y:1020,h:260},
+ {id:'M',y:1297,h:240}, {id:'O',y:1553,h:150}, {id:'P',y:1720,h:150}
+];
+const laneById=Object.fromEntries(laneDefs.map(l=>[l.id,l]));
+const depthCache={};
+const depth=id=>{if(depthCache[id]!==undefined)return depthCache[id];return depthCache[id]=BY_ID[id].req.length?Math.max(...BY_ID[id].req.map(depth))+1:0};
+const GX=d=>232+d*278;
+const positions={F0:[232,42]};
+for(const n of all.filter(n=>n.cat!=='F')){
+ const l=laneById[n.cat];let y=l.y+47;
+ if(n.cat==='L'){if(['L5','L6','L7'].includes(n.id))y=l.y+149;else if(['L3','L4'].includes(n.id))y=l.y+39;else y=l.y+91;}
+ if(n.cat==='M'){y=l.y+94;if(n.id==='M2')y=l.y+33;if(n.id==='M3')y=l.y+148;}
+ positions[n.id]=[GX(depth(n.id)),y];
+}
+const WORLD={w:GX(7)+80,h:1918};
+const edgeList=all.flatMap(n=>n.req.map(r=>({from:r,to:n.id,cross:BY_ID[r].cat!==n.cat})));
+let graphView='focus';let mapBuilt=false,mapInit=false,showExtras=true,mapSelection='L2',mapCatSelected='all',view={x:900,y:485,w:860};
+function vrect(){const f=el('mapFrame');return {w:Math.max(1,f.clientWidth),h:Math.max(1,f.clientHeight)}}
+function viewHeight(){const r=vrect();return view.w*r.h/r.w}
+function setMapView(x,y,w){const r=vrect(),mw=Math.max(300,Math.min(5200,w)),h=mw*r.h/r.w;view={x:Math.max(-160,Math.min(WORLD.w-100,x)),y:Math.max(-160,Math.min(WORLD.h-100,y)),w:mw};el('mapSvg').setAttribute('viewBox',`${view.x} ${view.y} ${mw} ${h}`)}
+function applyMapView(){setMapView(view.x,view.y,view.w)}
+function zoomAt(factor,cx,cy){const r=vrect();cx=cx??r.w/2;cy=cy??r.h/2;const wx=view.x+cx/r.w*view.w,wy=view.y+cy/r.w*view.w;const w=Math.max(300,Math.min(5200,view.w*factor));setMapView(wx-cx/r.w*w,wy-cy/r.w*w,w)}
+function focusNode(id){const p=positions[id];if(!p)return;const r=vrect(),w=r.w<570?570:1050,h=w*r.h/r.w;setMapView(p[0]+NW/2-w*(r.w<570?.70:.54),p[1]+NH/2-h*.44,w)}
+function focusCat(cat){graphView=cat==='all'?'overview':'focus';renderMapStatus();mapCatSelected=cat;document.querySelectorAll('[data-mapcat]').forEach(b=>b.classList.toggle('current',b.dataset.mapcat===cat));if(cat==='all'){fitAll();return}const lane=laneById[cat];if(!lane)return;const r=vrect(),w=r.w<570?920:1500,h=w*r.h/r.w;setMapView(160,lane.y+lane.h/2-h*.5,w)}
+function fitAll(){const r=vrect(),w=Math.max(WORLD.w+70,(WORLD.h+80)*r.w/r.h);setMapView((WORLD.w-w)/2,(WORLD.h-w*r.h/r.w)/2,w)}
+function focusCurrent(){const candidates=all.filter(n=>unlocked(n.id)&&!mastered(n.id));selectNode((candidates.find(n=>n.id!=='F0')||candidates[0]||all[0]).id,true)}
+function textLines(title,lim=22){const res=[],words=title.split(/\s+/);let line='';for(const word of words){if((line+' '+word).trim().length>lim&&line){res.push(line);line=word}else line=(line+' '+word).trim()}if(line)res.push(line);return res.slice(0,2)}
+function edgePath(edge){const s=positions[edge.from],t=positions[edge.to],sx=s[0]+NW,sy=s[1]+NH/2,tx=t[0],ty=t[1]+NH/2;const dx=tx-sx;
+ if(!edge.cross && Math.abs(sy-ty)<3) return `M${sx} ${sy} C${sx+25} ${sy} ${tx-25} ${ty} ${tx-8} ${ty}`;
+ let x=tx-27;if(x<sx+20)x=sx+24;
+ if(!edge.cross&&Math.abs(sy-ty)<145){return `M${sx} ${sy} C${sx+29} ${sy} ${x-20} ${ty} ${tx-8} ${ty}`}
+ // Cross-lane links travel in the gap immediately before the destination column.
+ const sign=ty>sy?1:-1,r=13;
+ return `M${sx} ${sy} H${x-r} Q${x} ${sy} ${x} ${sy+sign*r} V${ty-sign*r} Q${x} ${ty} ${x+r} ${ty} H${tx-8}`;
+}
+function addSvgText(parent,txt,attrs){const e=sEl('text',attrs);e.textContent=txt;parent.appendChild(e);return e}
+function drawGraph(){if(mapBuilt)return;mapBuilt=true;const svg=el('mapSvg');svg.innerHTML='';const defs=sEl('defs');defs.innerHTML=`<pattern id="atlasDots" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="1.8" cy="1.8" r="1" fill="#6f8e85" opacity=".13"/></pattern>
+ <marker id="arrMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#98aaa4"/></marker>
+ <marker id="arrPrereq" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#25866e"/></marker>
+ <marker id="arrNext" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#8a78c2"/></marker>`;svg.appendChild(defs);
+ svg.appendChild(sEl('rect',{x:0,y:0,width:WORLD.w,height:WORLD.h,fill:'#fbfcfa'}));svg.appendChild(sEl('rect',{x:0,y:0,width:WORLD.w,height:WORLD.h,fill:'url(#atlasDots)'}));
+ for(let i=0;i<8;i++){const x=GX(i);addSvgText(svg,i===0?'НАЧАЛО':`УРОВЕНЬ ${i+1}`,{x:x+NW/2,y:134,'text-anchor':'middle','font-size':13,'letter-spacing':1.5,'font-weight':800,fill:'#7d928b'});svg.appendChild(sEl('line',{x1:x-16,y1:142,x2:x-16,y2:WORLD.h-30,stroke:'#e8ede8','stroke-dasharray':'4 15'}))}
+ for(const l of laneDefs){const cat=CATS.find(c=>c.id===l.id);svg.appendChild(sEl('rect',{x:16,y:l.y,width:WORLD.w-30,height:l.h,rx:19,fill:'#ffffff',stroke:'#e5ebe6'}));svg.appendChild(sEl('rect',{x:16,y:l.y,width:6,height:l.h,rx:3,fill:'#b7d7c9'}));addSvgText(svg,`${l.id}  ${cat.title}`,{x:40,y:l.y+30,'font-size':18,'font-weight':750,fill:'#284d43'});addSvgText(svg,`${all.filter(n=>n.cat===l.id).length} навыков`,{x:40,y:l.y+51,'font-size':12,fill:'#82998e'});}
+ const b=sEl('rect',{x:213,y:27,width:271,height:101,rx:20,fill:'#e8f4ed',stroke:'#b9dacb'});svg.appendChild(b);addSvgText(svg,'ОБЩАЯ БАЗА',{x:510,y:64,'font-size':14,'font-weight':800,'letter-spacing':1.6,fill:'#5a8770'});addSvgText(svg,'F0 — дыхание и положение тела',{x:510,y:89,'font-size':17,fill:'#496c5a'});
+ const edges=sEl('g',{id:'graphEdges'});for(const e of edgeList){const path=sEl('path',{d:edgePath(e),fill:'none',stroke:'#97aaa2','stroke-width':2.3,'stroke-linecap':'round','stroke-linejoin':'round','marker-end':'url(#arrMuted)','data-edge-from':e.from,'data-edge-to':e.to,'data-edge-type':e.cross?'extra':'main'});edges.appendChild(path)}svg.appendChild(edges);
+ const nodes=sEl('g',{id:'graphNodes'});for(const n of all){const [x,y]=positions[n.id],g=sEl('g',{'data-node-id':n.id,role:'button',tabindex:0,'aria-label':n.id+' '+n.title,style:'cursor:pointer'});
+ g.appendChild(sEl('rect',{class:'node-shadow',x:x+1,y:y+5,width:NW,height:NH,rx:16,fill:'#1b4937',opacity:'.055'}));
+ g.appendChild(sEl('rect',{class:'nodeback',x,y,width:NW,height:NH,rx:16,fill:'#fff',stroke:'#dbe5df','stroke-width':1.5}));
+ g.appendChild(sEl('rect',{class:'node-strip',x:x+1,y:y+1,width:5,height:NH-2,rx:3,fill:'#aab9b1'}));
+ addSvgText(g,n.id,{x:x+18,y:y+23,'font-size':13,'font-weight':850,fill:'#577568','letter-spacing':.7});
+ const lines=textLines(n.title,n.title.length>29?23:27);
+ const label=addSvgText(g,'',{x:x+18,y:y+45,'font-size':lines.some(s=>s.length>24)?13:14.2,'font-weight':740,fill:'#203b35'});
+ lines.forEach((part,i)=>{const ts=sEl('tspan',{x:x+18,dy:i?18:0});ts.textContent=part;label.appendChild(ts)});
+ addSvgText(g,'',{class:'state-label',x:x+NW-15,y:y+23,'text-anchor':'end','font-size':11,'font-weight':800,fill:'#758981'});
+ nodes.appendChild(g)}svg.appendChild(nodes);
+ svg.addEventListener('keydown',e=>{const n=e.target.closest('[data-node-id]');if(n&&(e.key==='Enter'||e.key===' ')){e.preventDefault();selectNode(n.dataset.nodeId,true)}});
+ setupPointer();renderMapStatus();}
+function ancestors(id,out=new Set()){for(const r of BY_ID[id].req){if(!out.has(r)){out.add(r);ancestors(r,out)}}return out}
+function descendants(id,out=new Set()){for(const n of all){if(n.req.includes(id)&&!out.has(n.id)){out.add(n.id);descendants(n.id,out)}}return out}
+function relationTile(id,kind){const n=BY_ID[id],st=status(id),label=st==='mastered'?'✓ освоено':st==='open'?'● доступно':'○ не освоено';return `<button class="relation-tile ${st}" data-graph-node="${id}"><span class="relation-code">${id} <span>${label}</span></span><b>${esc(n.title)}</b></button>`}
+function renderRelation(){const n=BY_ID[mapSelection||'L2'];if(!n)return;const before=n.req,after=all.filter(x=>x.req.includes(n.id)).map(x=>x.id),st=status(n.id);
+ const beforeHTML=before.length?before.map(id=>relationTile(id)).join(''):'<div class="relation-empty">Начальный навык. Предварительных требований нет.</div>';
+ const afterHTML=after.length?after.map(id=>relationTile(id)).join(''):'<div class="relation-empty">Завершающий навык этой цепочки.</div>';
+ const need=missing(n.id);
+ el('relationPanel').innerHTML=`<div class="relation-header"><div><span class="eyebrow">НАВИГАТОР ЗАВИСИМОСТЕЙ</span><h3>${esc(n.title)} <span>${n.id}</span></h3></div><button class="relation-open" data-open="${n.id}">Карточка <span>↗</span></button></div>
+ <div class="relation-flow"><div class="relation-block before"><div class="relation-title"><span class="relation-icon">1</span> Сначала освоить ${before.length>1?'<em>ВСЕ</em>':''}</div><div class="relation-tiles">${beforeHTML}</div></div>
+ <div class="relation-center"><span>↓</span><div class="relation-current ${st}"><small>${st==='mastered'?'✓ ОСВОЕНО':st==='open'?'● МОЖНО ПРАКТИКОВАТЬ':'○ ЗАКРЫТО'}</small><strong>${esc(n.title)}</strong>${need.length?`<span>Осталось требований: ${need.length} из ${before.length}</span>`:'<span>Предпосылки выполнены</span>'}</div><span>↓</span></div>
+ <div class="relation-block after"><div class="relation-title"><span class="relation-icon">2</span> Этот навык открывает</div><div class="relation-tiles">${afterHTML}</div></div></div>
+ <div class="relation-foot"><span class="relation-point prior"></span> Зелёные связи — требования <span class="relation-point next"></span> Фиолетовые — продолжение</div>`;
+}
+function selectNode(id,center=false){if(!BY_ID[id])return;graphView='focus';mapSelection=id;renderMapStatus();if(center)focusNode(id);}
+function renderMapStatus(){if(!mapBuilt)return;const root=mapSelection||'L2',anc=ancestors(root),des=descendants(root);
+ for(const g of document.querySelectorAll('#graphNodes [data-node-id]')){const id=g.dataset.nodeId,st=status(id),self=id===root,prior=anc.has(id),after=des.has(id),near=self||prior||after;g.style.opacity=graphView==='overview'?'1':near?'1':'.075';const back=g.querySelector('.nodeback'),strip=g.querySelector('.node-strip'),state=g.querySelector('.state-label');
+ back.setAttribute('fill',self?'#e6f3ed':st==='mastered'?'#fff9ea':st==='open'?'#ffffff':'#f6f8f6');back.setAttribute('stroke',self?'#207b62':prior?'#52a487':after?'#b3a1de':st==='mastered'?'#c7b478':st==='open'?'#a8cbb8':'#d8e1d9');back.setAttribute('stroke-width',self?4:prior||after?2.3:1.4);
+ strip.setAttribute('fill',self?'#207b62':prior?'#51a888':after?'#aa97d0':st==='mastered'?'#cead62':st==='open'?'#9bc3ae':'#d0d9d1');state.textContent=st==='mastered'?'✓ ОСВОЕНО':st==='open'?'● ДОСТУПНО':'○ ЗАКРЫТО';state.setAttribute('fill',st==='mastered'?'#a08444':st==='open'?'#297a60':'#96a49b');}
+ for(const e of document.querySelectorAll('#graphEdges path')){const from=e.dataset.edgeFrom,to=e.dataset.edgeTo,isPrior=(anc.has(from)||from===root)&&(anc.has(to)||to===root),isAfter=(des.has(from)||from===root)&&(des.has(to)||to===root);const emphasis=isPrior||isAfter;const cross=e.dataset.edgeType==='extra';e.setAttribute('opacity',graphView==='overview'?(cross?(showExtras?'.42':'0'):'.7'):emphasis?'1':cross?(showExtras?'.025':'0'):'.055');e.setAttribute('stroke',isPrior?'#25866e':isAfter?'#8a78c2':'#a9bab1');e.setAttribute('stroke-width',emphasis?4.2:2);e.setAttribute('marker-end',isPrior?'url(#arrPrereq)':isAfter?'url(#arrNext)':'url(#arrMuted)');e.setAttribute('stroke-dasharray',cross&&!emphasis?'5 8':'none');}
+ if(el('mapExtras'))el('mapExtras').setAttribute('aria-pressed',String(showExtras));if(el('mapSelectedBar')){el('mapSelectedBar').querySelector('.s-code').textContent=root;el('mapSelectedBar').querySelector('.s-title').textContent=BY_ID[root].title}renderRelation();renderSoon(el('mapAvailable'),all.filter(n=>unlocked(n.id)&&!mastered(n.id)).map(n=>n.id));}
+const activePointers=new Map();let panStart=null,pinch=null,tapInfo=null;
+function setupPointer(){const svg=el('mapSvg');svg.addEventListener('pointerdown',e=>{if(e.button!==0&&e.pointerType==='mouse')return;svg.setPointerCapture(e.pointerId);activePointers.set(e.pointerId,{x:e.clientX,y:e.clientY});const node=e.target.closest('[data-node-id]');if(activePointers.size===1){panStart={x:e.clientX,y:e.clientY,v:{...view}};tapInfo={node:node?.dataset.nodeId||null,x:e.clientX,y:e.clientY,moved:false};pinch=null}else if(activePointers.size===2){const ps=[...activePointers.values()];pinch={d:Math.hypot(ps[0].x-ps[1].x,ps[0].y-ps[1].y),v:{...view},c:{x:(ps[0].x+ps[1].x)/2,y:(ps[0].y+ps[1].y)/2}};tapInfo=null}svg.classList.add('grabbing')});svg.addEventListener('pointermove',e=>{if(!activePointers.has(e.pointerId))return;activePointers.set(e.pointerId,{x:e.clientX,y:e.clientY});const r=svg.getBoundingClientRect();if(activePointers.size===1&&panStart&&!pinch){const dx=e.clientX-panStart.x,dy=e.clientY-panStart.y;if(tapInfo&&Math.hypot(dx,dy)>7)tapInfo.moved=true;setMapView(panStart.v.x-dx*panStart.v.w/r.width,panStart.v.y-dy*panStart.v.w/r.width,panStart.v.w)}else if(activePointers.size===2&&pinch){const ps=[...activePointers.values()],d=Math.max(12,Math.hypot(ps[0].x-ps[1].x,ps[0].y-ps[1].y)),newW=Math.max(300,Math.min(5200,pinch.v.w*pinch.d/d)),c={x:(ps[0].x+ps[1].x)/2,y:(ps[0].y+ps[1].y)/2},centerX=pinch.c.x-r.left,centerY=pinch.c.y-r.top,nowX=c.x-r.left,nowY=c.y-r.top,wx=pinch.v.x+centerX*pinch.v.w/r.width,wy=pinch.v.y+centerY*pinch.v.w/r.width;setMapView(wx-nowX*newW/r.width,wy-nowY*newW/r.width,newW)}});const up=e=>{const isTap=activePointers.size===1&&tapInfo&&!tapInfo.moved&&Math.hypot(e.clientX-tapInfo.x,e.clientY-tapInfo.y)<9;const target=tapInfo?.node;activePointers.delete(e.pointerId);if(activePointers.size===0){svg.classList.remove('grabbing');pinch=null;panStart=null;tapInfo=null;if(isTap&&target)selectNode(target,false)}else if(activePointers.size===1){const p=[...activePointers.values()][0];panStart={x:p.x,y:p.y,v:{...view}};pinch=null;tapInfo=null}};svg.addEventListener('pointerup',up);svg.addEventListener('pointercancel',up);svg.addEventListener('wheel',e=>{e.preventDefault();const r=svg.getBoundingClientRect();const x=e.clientX-r.left,y=e.clientY-r.top;const factor=Math.exp(Math.max(-500,Math.min(500,e.deltaY))*.0013),wx=view.x+x/r.width*view.w,wy=view.y+y/r.width*view.w,w=Math.max(300,Math.min(5200,view.w*factor));setMapView(wx-x/r.width*w,wy-y/r.width*w,w)},{passive:false});}
+
+// -------- Detail sheet --------
+let selectedId=null,detailTab='technique',draftChecks={};
+function lastAttempt(id){const logs=assessments(id).filter(x=>x&&typeof x.date==='string');return logs.length?logs.slice().sort((a,b)=>String(a.at||a.date).localeCompare(String(b.at||b.date))).at(-1):null}
+function restoredChecks(id){
+ const last=lastAttempt(id),items=checkItems(entryFor(id));
+ if(!last||!items.length)return {};
+ if(Array.isArray(last.checks)&&last.checks.length===items.length&&last.criteriaVersion===5)
+   return Object.fromEntries(last.checks.map((value,i)=>[i,value===true]));
+ // The v4 checklist had the same five criteria but stored only the pass result.
+ if(last.criteriaVersion===4&&last.pass===true&&last.mode==='checked')
+   return Object.fromEntries(items.map((_,i)=>[i,true]));
+ return {};
+}
+function openNode(id,tab='technique'){if(!BY_ID[id])return;selectedId=id;detailTab=tab;draftChecks=restoredChecks(id);mapSelection=id;renderMapStatus();document.body.style.overflow='hidden';el('modalOverlay').classList.add('open');renderDetail();el('modalOverlay').querySelector('.sheet-content').scrollTo({top:0,behavior:'instant'});}
+function closeNode(){el('modalOverlay').classList.remove('open');document.body.style.overflow='';selectedId=null;mapSelection=null;renderMapStatus()}
+function renderDetail(){if(!selectedId)return;const n=entryFor(selectedId),st=status(selectedId);el('detailTitle').textContent=n.title;el('detailMeta').textContent=`${n.id} · ${catTitle(n)} · ${st==='mastered'?'Освоено':st==='open'?'Доступно':'Закрыто'}`;document.querySelectorAll('[data-detailtab]').forEach(b=>b.classList.toggle('active',b.dataset.detailtab===detailTab));const root=el('detailBody');if(detailTab==='technique')root.innerHTML=detailTechnique(n);if(detailTab==='assessment')root.innerHTML=detailAssessment(n);}
+function prereqHtml(n){const req=n.req.map(id=>`<button data-jump="${id}" title="Посмотреть упражнение">${mastered(id)?'✓ ':'○ '}${id} · ${esc(BY_ID[id].title)}</button>`).join('');return `<div class="detail-prereqs"><span class="small muted">Предпосылки:</span>${req||'<span class="pill open">Стартовое упражнение</span>'}</div>`}
+function detailTechnique(n){
+ const s=status(n.id),available=!!MASTERY_CHECKS[n.id],hasDone=isDoneToday(n.id);
+ let html=`<div class="detail-journey" aria-label="Последовательность работы"><span><b>1</b> Изучи</span><span><b>2</b> Выполни</span><span><b>3</b> Отметь</span></div><div class="detail-dose"><span class="eyebrow">Что нужно выполнить</span><strong>${esc(n.dose)}</strong></div><p class="detail-intro">${esc(n.short)}</p>${prereqHtml(n)}`;
+ if(s==='locked')html+=`<div class="lock-info"><strong>Навык пока закрыт.</strong><p>Сначала нужно освоить: ${missing(n.id).map(x=>esc(x+' · '+BY_ID[x].title)).join('; ')}.</p></div>`;
+ if(n.setup)html+=`<h3>Исходное положение</h3><p>${esc(n.setup)}</p>`;
+ if(n.steps.length)html+=`<h3>Как выполнять</h3><ol class="steps">${n.steps.map(x=>`<li>${esc(x)}</li>`).join('')}</ol>`;
+ else html+=`<div class="info-line"><b>Подробная техника пока не добавлена.</b> Этот навык есть на карте, но описание будет дополнено в следующей версии кода.</div>`;
+ if(n.mistakes.length)html+=`<h3>На что обратить внимание</h3><ul class="textlist">${n.mistakes.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;
+ if(n.safety)html+=`<div class="caution">${esc(n.safety)}</div>`;
+ else if(CAUTION_IDS.has(n.id))html+=`<div class="caution">При симптомах со стороны шеи и спины не пытайся освоить упражнение через боль. Может потребоваться очная оценка специалиста.</div>`;
+ if(s!=='locked'){
+  html+=`<div class="detail-next"><span class="eyebrow">После выполнения</span><p>${available?'Открой чек-лист. Он уже заполнен ответами из последней попытки: поправь то, что изменилось сегодня, и сохрани результат.':'У этого упражнения ещё нет подробного чек-листа. Попытку можно записать без зачёта освоения.'}</p><div class="detail-buttons"><button class="btn primary wide" data-settab="assessment">${hasDone?'✓ Изменить сегодняшнюю отметку':'＋ Отметить попытку'}</button></div></div>`;
+ }
+ html+=`<button class="btn wide" style="margin-top:12px" data-locate="${n.id}">Показать на карте</button>`;
+ return html;
+}
+function checkItems(n){
+ const specific=MASTERY_CHECKS[n.id];
+ if(!Array.isArray(specific)||specific.length<2)return [];
+ return [`Выполнен весь норматив: ${n.dose}`, ...specific, COMMON_SAFETY];
+}
+function detailAssessment(n){
+ const s=status(n.id),items=checkItems(n),count=items.filter((_,i)=>draftChecks[i]).length,logs=assessments(n.id),good=Math.min(2,goodDays(n.id));
+ const previous=lastAttempt(n.id),fromPrevious=previous&&items.length;
+ let html=`<div class="test-intro"><span class="eyebrow">ОТМЕТКА ПОПЫТКИ · ${n.id}</span><h3>Как прошло упражнение?</h3><p>После выполнения проверь пункты по сегодняшней попытке. ${fromPrevious?'Ответы из последней записи подставлены автоматически — измени только отличия.':'Первый раз отметь, какие условия соблюдались.'} Сохранить можно и неполный результат.</p><div class="test-progress" aria-label="${good} из 2 успешных дней"><span class="${good>=1?'filled':''}"></span><span class="${good>=2?'filled':''}"></span></div><small>${good===2?'Навык уже освоен: дальнейшие попытки остаются в истории.':good===1?'Один успешный день записан. Нужен ещё один зачёт в другую дату.':'Для освоения нужны две успешные попытки в разные дни, не обязательно подряд.'}</small></div>`;
+ if(s==='locked')return html+`<div class="lock-info">Сначала освой: ${missing(n.id).map(x=>esc(x+' · '+BY_ID[x].title)).join('; ')}.</div><button class="btn wide" data-settab="technique">Посмотреть технику</button>`;
+ if(!items.length)return html+`<div class="empty-test"><h3>Чек-лист пока не заполнен</h3><p>Можно записать тренировку, но оценка освоения недоступна, пока в код не добавлены конкретные критерии этого упражнения.</p><button class="btn primary wide" id="saveAssessment">Сохранить попытку без зачёта</button></div>`;
+ if(fromPrevious)html+=`<div class="restored-note"><span aria-hidden="true">↺</span><span>Подставлены ответы от ${fmtDate(previous.date)}. Это не сегодняшняя проверка — просмотри пункты перед сохранением.</span></div>`;
+ html+=`<div class="test-group"><div class="test-section-label"><span>01</span><div><strong>Норматив</strong><small>Выполнен ли объём полностью?</small></div></div>${oneCheck(items[0],0)}</div>`;
+ html+=`<div class="test-group"><div class="test-section-label"><span>02</span><div><strong>Техника</strong><small>Наблюдаемые признаки именно этого движения</small></div></div>${items.slice(1,-1).map((x,i)=>oneCheck(x,i+1)).join('')}</div>`;
+ html+=`<div class="test-group"><div class="test-section-label"><span>03</span><div><strong>Самочувствие</strong><small>Безопасность важнее зачёта</small></div></div>${oneCheck(items.at(-1),items.length-1)}</div>`;
+ html+=`<div class="test-save"><div class="test-counter" id="testCounter">${count} из ${items.length} выполнено</div><button class="btn primary wide" id="saveAssessment">Сохранить попытку</button><p id="testHint">${count===items.length?'Все пункты подтверждены — сохранение даст зачёт за сегодня.':'Неполный чек-лист тоже сохраняется. Он не даст зачёт, но останется в истории.'}</p></div>`;
+ if(logs.length)html+=`<div class="test-history"><h3>Последние попытки</h3>${logs.slice(-4).reverse().map(l=>`<div class="history"><div><strong>${l.pass&&l.criteriaVersion>=4?'✓ Зачёт':l.pass?'Старый чек-лист · без зачёта':`Попытка${Array.isArray(l.checks)&&l.checks.length?` · ${l.checks.filter(Boolean).length}/${l.checks.length}`:''}`}</strong><span>${fmtDate(l.date)}</span></div></div>`).join('')}</div>`;
+ html+=`<button class="btn danger test-reset" data-reset-node="${n.id}">Удалить историю проверок</button>`;
+ return html;
+}
+function oneCheck(label,i){return `<label class="test-choice"><input type="checkbox" data-assess="${i}" ${draftChecks[i]?'checked':''}><span class="test-tick" aria-hidden="true">✓</span><span>${esc(label)}</span></label>`}
+function saveAssessment(){
+ const n=entryFor(selectedId);if(!n||!unlocked(n.id)){toast('Отметка недоступна');return}
+ const items=checkItems(n),checks=items.map((_,i)=>draftChecks[i]===true),passed=items.length>0&&checks.every(Boolean);
+ const was=mastered(n.id),d=today(),logs=assessments(n.id);
+ // Store each attempt; unique successful dates, not raw number of submissions, unlock skills.
+ logs.push({date:d,pass:passed,mode:items.length?'checked':'recorded',checks,at:new Date().toISOString(),criteriaVersion:5});
+ state.assessments[n.id]=logs;
+ state.done[d]=Array.from(new Set([...(Array.isArray(state.done[d])?state.done[d]:[]),n.id]));
+ save();renderAll();const now=mastered(n.id);closeNode();
+ toast(!was&&now?'Навык освоен! Открылись новые упражнения.':passed?`Попытка сохранена · зачёт ${Math.min(2,goodDays(n.id))}/2`:`Попытка сохранена${items.length?` · ${checks.filter(Boolean).length}/${items.length}`:' · без зачёта'}`);
+}
+function resetNode(id){if(!confirm('Удалить историю проверок '+id+'? Это может снова закрыть зависящие от него упражнения.'))return;delete state.assessments[id];draftChecks={};save();renderAll();renderDetail();toast('История попыток удалена')}
+// -------- Backup, restore, navigation --------
+function exportJSON(){const b=new Blob([JSON.stringify({app:'Pilates Atlas',exportedAt:new Date().toISOString(),data:state},null,2)],{type:'application/json'});const u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=`pilates-atlas-backup-${today()}.json`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),3000);toast('Резервная копия сформирована')}
+async function importJSON(file){try{if(!file)return;const raw=JSON.parse(await file.text()),data=raw?.data||raw;if(!validObj(data)||!validObj(data.done)||!validObj(data.assessments))throw Error('Неверный формат');for(const [id,history]of Object.entries(data.assessments)){if(!BY_ID[id]||!Array.isArray(history)||history.length>15000)throw Error('Некорректная история');for(const x of history){if(!x||!/^\d{4}-\d{2}-\d{2}$/.test(String(x.date))||typeof x.pass!=='boolean')throw Error('Некорректная запись')}}if(!confirm('Заменить текущие данные содержимым резервной копии?'))return;state={...blank(),...data};delete state.edits;state.pinned=Array.isArray(state.pinned)?state.pinned.filter(x=>BY_ID[x]):[];delete state.workout;save();renderAll();closeNode();toast('Резервная копия восстановлена')}catch(e){alert('Не удалось прочитать резервную копию: '+e.message)}finally{el('importFile').value=''}}
+function resetAll(){if(!confirm('Удалить ВСЕ отметки и зачёты с этого устройства? Это нельзя отменить без резервной копии.'))return;if(!confirm('Точно удалить все данные Pilates Atlas?'))return;state=blank();save();renderAll();closeNode();toast('Данные сброшены')}
+async function copyJSON(){const s=JSON.stringify({app:'Pilates Atlas',exportedAt:new Date().toISOString(),data:state});try{await navigator.clipboard.writeText(s);toast('JSON скопирован')}catch{const a=document.createElement('textarea');a.value=s;document.body.appendChild(a);a.select();try{document.execCommand('copy');toast('JSON скопирован')}catch{toast('Используй скачивание резервной копии')}a.remove()}}
+function bind(){document.addEventListener('click',e=>{const tab=e.target.closest('[data-route]');if(tab){route(tab.dataset.route);return}const open=e.target.closest('[data-open]');if(open){openNode(open.dataset.open);return}const pm=e.target.closest('[data-practicemode]');if(pm){practiceMode=pm.dataset.practicemode;renderPractice();return}const pin=e.target.closest('[data-pin]');if(pin){togglePinned(pin.dataset.pin);return}const as=e.target.closest('[data-open-assess]');if(as){openNode(as.dataset.openAssess,'assessment');return}const gn=e.target.closest('[data-graph-node]');if(gn){selectNode(gn.dataset.graphNode,true);return}const mm=e.target.closest('[data-mapmode]');if(mm){setMapMode(mm.dataset.mapmode);return}const branch=e.target.closest('[data-branch]');if(branch){showBranch(branch.dataset.branch);return}const overview=e.target.closest('#branchBack');if(overview){activeBranch=null;renderBranches();return}const fullLink=e.target.closest('#branchFullLink');if(fullLink){setMapMode('full');if(activeBranch)focusCat(activeBranch);return}const c=e.target.closest('[data-cat]');if(c){catalogCat=c.dataset.cat;renderCatalog();return}const f=e.target.closest('[data-stat]');if(f){catalogStat=f.dataset.stat;renderCatalog();return}const mc=e.target.closest('[data-mapcat]');if(mc){focusCat(mc.dataset.mapcat);return}const jump=e.target.closest('[data-jump]');if(jump){openNode(jump.dataset.jump);return}const setTab=e.target.closest('[data-settab]');if(setTab){detailTab=setTab.dataset.settab;renderDetail();el('modalOverlay').querySelector('.sheet-content').scrollTo({top:0,behavior:'instant'});return}const loc=e.target.closest('[data-locate]');if(loc){const id=loc.dataset.locate;closeNode();route('map');focusNode(id);return}const dt=e.target.closest('[data-detailtab]');if(dt){detailTab=dt.dataset.detailtab;renderDetail();el('modalOverlay').querySelector('.sheet-content').scrollTo({top:0,behavior:'instant'});return}if(e.target.closest('#saveAssessment')){saveAssessment();return}const rn=e.target.closest('[data-reset-node]');if(rn){resetNode(rn.dataset.resetNode);return}});
+el('modalOverlay').addEventListener('click',e=>{if(e.target===el('modalOverlay'))closeNode()});el('closeModal').onclick=closeNode;document.addEventListener('keydown',e=>{if(e.key==='Escape'&&selectedId)closeNode()});
+el('detailBody').addEventListener('change',e=>{if(e.target.matches('[data-assess]')){draftChecks[Number(e.target.dataset.assess)]=e.target.checked;const items=checkItems(entryFor(selectedId));const count=items.filter((_,i)=>draftChecks[i]).length;const counter=el('testCounter');if(counter)counter.textContent=`${count} из ${items.length} выполнено`;const hint=el('testHint');if(hint)hint.textContent=count===items.length?'Все пункты подтверждены — сохранение даст зачёт за сегодня.':'Неполный чек-лист тоже сохраняется. Он не даст зачёт, но останется в истории.'}});
+
+
+el('searchInput').oninput=e=>{catalogSearch=e.target.value;renderCatalog()};el('resetCatalog').onclick=()=>{catalogSearch='';catalogStat='all';catalogCat='all';el('searchInput').value='';renderCatalog()};
+el('mapSelectedBar').onclick=()=>el('relationPanel').scrollIntoView({behavior:'smooth',block:'center'});el('mapFit').onclick=()=>{fitAll();mapCatSelected='all';document.querySelectorAll('[data-mapcat]').forEach(b=>b.classList.toggle('current',b.dataset.mapcat==='all'))};el('mapPlus').onclick=()=>zoomAt(.78);el('mapMinus').onclick=()=>zoomAt(1.3);el('mapCurrent').onclick=focusCurrent;el('mapExtras').onclick=()=>{showExtras=!showExtras;renderMapStatus();toast(showExtras?'Перекрёстные связи показаны':'Перекрёстные связи скрыты')};
+el('exportBtn').onclick=exportJSON;el('importBtn').onclick=()=>el('importFile').click();el('importFile').onchange=e=>importJSON(e.target.files[0]);el('copyBtn').onclick=copyJSON;el('resetBtn').onclick=resetAll;
+window.addEventListener('resize',()=>{if(mapBuilt&&mapInit&&mapMode==='full')applyMapView();if(activeBranch&&mapMode==='branches')requestAnimationFrame(drawBranchEdges)});
+}
+function init(){el('mapCats').innerHTML=[{id:'all',title:'Вся карта'},...CATS].map(c=>`<button data-mapcat="${c.id}" class="${c.id==='all'?'current':''}">${esc(c.title)}</button>`).join('');drawGraph();bind();renderAll();renderBranches()}
+init();
+})();
+</script>
+</body>
+</html>
