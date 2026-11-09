@@ -112,6 +112,9 @@ main.shell{width:100%;max-width:1100px;flex:1 1 auto;min-height:0;overflow-y:aut
 .detail-dose .eyebrow,.test-intro .eyebrow,.detail-next .eyebrow{display:block;letter-spacing:.09em;text-transform:uppercase;color:#527d65;font-weight:850;font-size:10px}
 .detail-dose strong{font-size:16px;color:#244d39;line-height:1.38}
 .detail-intro{font-size:14px;color:#526b5b;line-height:1.6;margin-bottom:18px}
+.detail-animation{margin:18px 0}
+.detail-animation img{display:block;width:100%;max-width:420px;height:auto;margin:0 auto;border-radius:14px}
+.detail-animation figcaption{text-align:center;margin-top:8px;font-size:12px;color:#5f7769}
 .detail-next{margin-top:18px;border-top:1px solid #e5ebe5;padding-top:18px}
 .detail-next p{color:#5f7769;font-size:13px;line-height:1.55;margin:7px 0 14px}
 .detail-buttons{display:flex;gap:9px;flex-wrap:wrap}
@@ -281,6 +284,14 @@ add('P2','Полная планка','P',['P1'],'2 × 30 секунд');
 add('P3','Leg Pull Front','P',['P2','D2'],'2 × 6 подъёмов на сторону','advanced');
 const BY_ID=Object.fromEntries(all.map(n=>[n.id,n]));
 const FOUNDATION=['A1','B1','C1','D1','E1','L1','M1'];
+const EXERCISE_GIFS={
+ B1:'resources/b1-pelvic-curl.gif',
+ C1:'resources/c1-half-roll-back.gif',
+ D1:'resources/d1-quadruped-weight-shift.gif',
+ E1:'resources/e1-prone-chest-lift.gif',
+ L1:'resources/l1-clamshell.gif',
+ M1:'resources/m1-seated-posture-breathing.gif'
+};
 const STARRERS={
  F0:{short:'Базовый навык дыхания и контроля положения корпуса.', setup:'Ляг на спину, согни колени, поставь стопы на пол. Ладони положи на нижние рёбра.',steps:['На вдохе разреши нижним рёбрам расширяться в стороны и немного назад. Не поднимай плечи к ушам.','На спокойном выдохе позволь рёбрам мягко опуститься. Не втягивай живот с максимальным усилием.','Слегка подкрути таз, приблизив поясницу к коврику, затем верни небольшой естественный прогиб. Сделай 8 медленных повторений.','Найди комфортную нейтраль таза и подыши 5 циклов без лишнего напряжения.'],mistakes:['Задержка дыхания или чрезмерное напряжение живота.','Подъём плеч и жёсткая грудная клетка.','Постоянное насильное прижатие поясницы к полу.'],safety:'Положение должно оставаться комфортным; нет цели «выключить» естественный изгиб поясницы.'},
  A1:{short:'Учимся двигать ногой, не раскачивая таз.',setup:'Ляг на спину, согни обе ноги, поставь стопы на ширине таза. Руки вдоль корпуса.',steps:['На выдохе медленно скользи одной пяткой вперёд по полу, почти выпрямляя ногу.','Сохраняй положение рёбер и таза. Если поясница сильнее прогибается, сократи амплитуду.','На вдохе верни стопу к тазу. Повтори другой ногой.','Двигайся примерно по 2 секунды в каждую сторону, без ускорения.'],mistakes:['Таз поворачивается к движущейся ноге.','Поясница прогибается сильнее при разгибании.','Пятка отрывается от пола или движение выполняется рывком.'],safety:'Не нужно максимально разгибать колено; используй комфортную амплитуду.'},
@@ -513,6 +524,7 @@ function detailTechnique(n){
  const s=status(n.id),available=!!MASTERY_CHECKS[n.id],hasDone=isDoneToday(n.id);
  let html=`<div class="detail-journey" aria-label="Последовательность работы"><span><b>1</b> Изучи</span><span><b>2</b> Выполни</span><span><b>3</b> Отметь</span></div><div class="detail-dose"><span class="eyebrow">Что нужно выполнить</span><strong>${esc(n.dose)}</strong></div><p class="detail-intro">${esc(n.short)}</p>${prereqHtml(n)}`;
  if(s==='locked')html+=`<div class="lock-info"><strong>Навык пока закрыт.</strong><p>Сначала нужно освоить: ${missing(n.id).map(x=>esc(x+' · '+BY_ID[x].title)).join('; ')}.</p></div>`;
+ if(EXERCISE_GIFS[n.id])html+=`<figure class="detail-animation"><img src="${EXERCISE_GIFS[n.id]}" alt="Демонстрация упражнения ${esc(n.title)}" loading="lazy" decoding="async"><figcaption>${esc(n.id)} · ${esc(n.title)}</figcaption></figure>`;
  if(n.setup)html+=`<h3>Исходное положение</h3><p>${esc(n.setup)}</p>`;
  if(n.steps.length)html+=`<h3>Как выполнять</h3><ol class="steps">${n.steps.map(x=>`<li>${esc(x)}</li>`).join('')}</ol>`;
  else html+=`<div class="info-line"><b>Подробная техника пока не добавлена.</b> Этот навык есть на карте, но описание будет дополнено в следующей версии кода.</div>`;
